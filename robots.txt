@@ -1,0 +1,39 @@
+# unfog.cn —— 脉动（解睿）个人站
+# robots.txt 管「谁能爬」，llms.txt 讲「站里有什么」，两者不冲突。
+
+User-agent: *
+Allow: /
+
+# 生成式引擎爬虫：显式允许（GEO 的前提是内容被读到；若某天想拦，改这一段的 Allow 为 Disallow）
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: Bytespider
+Allow: /
+User-agent: meta-externalagent
+Allow: /
+User-agent: DuckAssistBot
+Allow: /
+User-agent: cohere-ai
+Allow: /
+User-agent: Amazonbot
+Allow: /
+
+Sitemap: https://unfog.cn/sitemap.xml
