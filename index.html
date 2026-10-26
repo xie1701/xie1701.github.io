@@ -278,6 +278,15 @@ h2{margin:0;font:900 clamp(30px,4.4vw,52px)/1.24 var(--serif);letter-spacing:.02
 .theory-note{margin:24px 0 0;padding:12px 16px;border:1px dashed rgba(242,237,227,.4);color:#a8b3ba;font-size:11.5px;line-height:1.8}
 /* ============ FIELDS: index list with hover invert ============ */
 .serve-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;margin-top:8px}
+/* GEO 入口条 */
+.geo-band{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;margin:30px 0 6px;padding:22px 24px;background:var(--ink);color:var(--paper);border-left:5px solid var(--orange);transition:transform .3s var(--ease)}
+.geo-band:hover{transform:translateX(4px)}
+.geo-band .gb-k{font:10px/1.5 var(--mono);letter-spacing:.18em;color:var(--orange);display:block;margin-bottom:8px}
+.geo-band .gb-t{font-family:var(--serif);font-size:clamp(19px,2.6vw,25px);font-weight:700;line-height:1.45;margin:0}
+.geo-band .gb-d{font-size:13.5px;line-height:1.75;color:#cdc5b4;margin:8px 0 0;max-width:52ch}
+.geo-band .gb-go{flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border:1.5px solid var(--orange);color:var(--paper);font:12px var(--mono);letter-spacing:.08em}
+.geo-band:hover .gb-go{background:var(--orange)}
+@media(max-width:640px){.geo-band{padding:18px 18px}.geo-band .gb-go{width:100%;justify-content:center}}
 .serve-card{min-height:0}
 .serve-card h3{font-size:clamp(24px,2.4vw,30px)!important}
 .serve-output{margin-top:26px;padding:18px 24px;border:2px solid var(--ink);background:var(--paper-2);box-shadow:6px 6px 0 var(--ink);display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px}
@@ -511,10 +520,14 @@ h2{margin:0;font:900 clamp(30px,4.4vw,52px)/1.24 var(--serif);letter-spacing:.02
     "TOC 制约理论",
     "AI 产品实践",
     "本地商家线上内容共建",
-    "短视频与图文内容策划"
+    "短视频与图文内容策划",
+    "生成式引擎优化（GEO）",
+    "AI 搜索优化",
+    "AI 可见度诊断"
    ],
    "sameAs": [
-    "https://github.com/xie1701"
+    "https://github.com/xie1701",
+    "https://panorover.com/U/wx_8469d7bc"
    ]
   },
   {
@@ -551,6 +564,33 @@ h2{margin:0;font:900 clamp(30px,4.4vw,52px)/1.24 var(--serif);letter-spacing:.02
     "description": "费用与合作方式请通过页脚的邮箱或微信联系。",
     "availability": "https://schema.org/InStock"
    }
+  },
+  {
+   "@type": "Service",
+   "@id": "https://unfog.cn/geo/#service",
+   "name": "GEO 生成式引擎优化（AI 可见度诊断）",
+   "serviceType": "生成式引擎优化",
+   "url": "https://unfog.cn/geo/",
+   "provider": {
+    "@id": "https://unfog.cn/#person"
+   },
+   "areaServed": [
+    {
+     "@type": "City",
+     "name": "珠海"
+    },
+    {
+     "@type": "Country",
+     "name": "中国（远程）"
+    }
+   ],
+   "description": "GEO（生成式引擎优化）是让一家店、一个名字、一件事出现在 AI 回答客户问题的那一个句子里。做法三步：实体消歧、内容改成可被整段引用、拿到独立于自己的第三方来源。不承诺 AI 排名，只承诺 AI 说得清、说得对。",
+   "offers": {
+    "@type": "Offer",
+    "priceCurrency": "CNY",
+    "description": "先做一次 AI 可见度诊断，再定合作方式。",
+    "availability": "https://schema.org/InStock"
+   }
   }
  ]
 }
@@ -563,7 +603,7 @@ h2{margin:0;font:900 clamp(30px,4.4vw,52px)/1.24 var(--serif);letter-spacing:.02
 <div class="floatnav" id="floatnav" aria-label="悬浮导航">
   <div class="wrap">
     <span class="fn-brand"><img class="fn-logo" src="assets/logo-mark.png" alt="" aria-hidden="true" width="256" height="256">脉动无休<i>MAIDONG WUXIU</i></span>
-    <nav><a href="#projects">作品</a><a href="#toc">方法</a><a href="#fields">共建</a><a href="blog/">博客</a><a href="#contact" class="nav-cta">联系我 ↗</a></nav>
+    <nav><a href="#projects">作品</a><a href="#toc">方法</a><a href="#fields">共建</a><a href="geo/">AI 可见度</a><a href="blog/">博客</a><a href="#contact" class="nav-cta">联系我 ↗</a></nav>
   </div>
 </div>
 <section class="hero" id="top" aria-labelledby="hero-title">
@@ -574,7 +614,7 @@ h2{margin:0;font:900 clamp(30px,4.4vw,52px)/1.24 var(--serif);letter-spacing:.02
         <span class="brand-name">脉动无休<small>MAIDONG WUXIU</small></span>
       </a>
       <div class="nav">
-        <a href="#projects">作品</a><a href="#toc">方法</a><a href="#fields">共建</a><a href="blog/">博客</a><a href="#contact" class="nav-cta">联系我 ↗</a>
+        <a href="#projects">作品</a><a href="#toc">方法</a><a href="#fields">共建</a><a href="geo/">AI 可见度</a><a href="blog/">博客</a><a href="#contact" class="nav-cta">联系我 ↗</a>
       </div>
     </nav>
     <p class="hero-vert" aria-hidden="true">脉動無休</p>
@@ -737,6 +777,14 @@ h2{margin:0;font:900 clamp(30px,4.4vw,52px)/1.24 var(--serif);letter-spacing:.02
         <p class="project-boundary">边界照旧：不承诺爆款、粉丝数、询盘量、成交额。我负责的，是一套别人复制不走、客户看得懂的表达。</p>
       </div>
     </div>
+    <a class="geo-band rise" href="geo/" aria-label="GEO 生成式引擎优化：AI 可见度诊断方法">
+      <span>
+        <span class="gb-k">GEO · 生成式引擎优化 / AI VISIBILITY</span>
+        <span class="gb-t">客户不搜关键词了，他直接问 AI。<br>你的店在那个答案里吗？</span>
+        <span class="gb-d">百科、官网、SEO 都齐了，AI 还是说不清你做什么——这不是流量问题，是实体和引用链断了。看我怎么做这一步：诊断七问、实体消歧、内容可引用化。</span>
+      </span>
+      <span class="gb-go">看方法 ↗</span>
+    </a>
     <div class="serve-grid">
       <article class="project serve-card rise">
         <div class="project-head"><span class="project-code">A / ONLINE</span><span class="stamp-badge">按月共建</span></div>

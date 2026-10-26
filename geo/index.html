@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f2ede3">
+<title>GEO 生成式引擎优化（AI 可见度）｜珠海 · 脉动无休（解睿 / Jerry）</title>
+<meta name="description" content="GEO（生成式引擎优化）是让你的店、你的名字出现在 AI 回答里的那一步。珠海本地，一店一案：实体消歧、内容可引用、拿第三方证人。不承诺排名，只承诺 AI 说得清、说得对。">
+<meta name="keywords" content="GEO,生成式引擎优化,AI 搜索优化,AI 可见度,珠海 GEO,珠海 AI 搜索优化,豆包 搜不到我的店,DeepSeek 推荐,腾讯元宝,AI 引用,llms.txt">
+<link rel="canonical" href="https://unfog.cn/geo/">
+<link rel="alternate" type="application/rss+xml" title="脉动无休 · 文章" href="/blog/rss.xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="脉动无休">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:url" content="https://unfog.cn/geo/">
+<meta property="og:title" content="GEO 生成式引擎优化：让 AI 说得出你是谁">
+<meta property="og:description" content="AI 说得出你是谁吗？珠海，一店一案：实体消歧、内容可引用、拿第三方证人。不承诺排名。">
+<meta property="og:image" content="https://unfog.cn/assets/share-card.png">
+<meta property="og:image:alt" content="GEO 生成式引擎优化｜脉动无休（解睿 / Jerry）">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GEO 生成式引擎优化：让 AI 说得出你是谁">
+<meta name="twitter:description" content="AI 说得出你是谁吗？珠海，一店一案：实体消歧、内容可引用、拿第三方证人。不承诺排名。">
+<meta name="twitter:image" content="https://unfog.cn/assets/share-card.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://unfog.cn/geo/#service",
+      "name": "GEO 生成式引擎优化（AI 可见度诊断）",
+      "alternateName": ["生成式引擎优化", "AI 搜索优化", "AI 可见度优化", "GEO"],
+      "url": "https://unfog.cn/geo/",
+      "description": "GEO（生成式引擎优化，Generative Engine Optimization）是指让一家店、一个名字、一件事，出现在 AI 回答客户问题的那个句子里。做法分三步：实体消歧、内容改成可被整段引用、拿到独立于自己的第三方来源。不承诺 AI 排名，只承诺 AI 说得清、说得对。",
+      "serviceType": ["生成式引擎优化", "AI 搜索优化", "AI 可见度诊断", "内容可引用化改造"],
+      "provider": { "@id": "https://unfog.cn/#person" },
+      "areaServed": [
+        { "@type": "City", "name": "珠海" },
+        { "@type": "Country", "name": "中国（远程）" }
+      ],
+      "knowsLanguage": "zh-CN",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "CNY",
+        "description": "一店一案，先做一次 AI 可见度诊断，再定合作方式。费用与周期通过微信 xie1701 或邮箱 xie1701@gmail.com 沟通。",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://unfog.cn/geo/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "GEO 和 SEO 冲突吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "不冲突，底子是同一套：页面结构清楚、内容真实、有人在别处提到你。区别在目标——SEO 争的是「用户点进来之前排第几」，GEO 争的是「AI 直接答出来的时候有没有你」。客户点进来的行为正在变少，所以后者的权重在涨，前者没有作废。" }
+        },
+        {
+          "@type": "Question",
+          "name": "GEO 要多久能看到变化？",
+          "acceptedAnswer": { "@type": "Answer", "text": "自己有站、内容能改的，两到四周能看到 AI 的说法开始变；纯靠第三方来源的部分要看真实业务，通常两到三个月。任何说一周就能让 AI 天天推荐你的，都不是 GEO。" }
+        },
+        {
+          "@type": "Question",
+          "name": "GEO 是让 AI 说我的好话吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "不是。要求只有一条：说得对。AI 说得出你是谁、做什么、在哪、擅长什么，不把你说错、不把别人当成你。说好话归口碑，归客户评价，不归我做。" }
+        },
+        {
+          "@type": "Question",
+          "name": "小本生意有必要做吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "越是本地的、靠口碑的、从来没做过线上内容的店，差别越大。因为 AI 手里关于你的信息越少，它越容易拿同行的说法拼一个答案出来——而那个答案里没有你。" }
+        },
+        {
+          "@type": "Question",
+          "name": "我自己能先做什么，不花钱？",
+          "acceptedAnswer": { "@type": "Answer", "text": "三件：一是把店名、地址、电话、营业时间在所有平台上改成完全一致的写法；二是加一页说清「你是谁、做什么、服务哪里、怎么收费」；三是请三个真客户在公开平台上各写一句具体的话，别写「服务很好」，写他做了什么、解决了什么问题。" }
+        },
+        {
+          "@type": "Question",
+          "name": "为什么找你，而不是找卖 GEO 工具和代理的公司？",
+          "acceptedAnswer": { "@type": "Answer", "text": "那些公司卖的是工具授权和批量铺量，一套模板打所有店。我做的是一店一案，先把这家店在 AI 里到底是什么样测出来，再改。我不承诺排名，因为我改的是「AI 能不能说清你」，不是「AI 把你排第几」。" }
+        },
+        {
+          "@type": "Question",
+          "name": "你不承诺什么？",
+          "acceptedAnswer": { "@type": "Answer", "text": "不承诺排名第一，不承诺被某个 AI 优先推荐，不承诺询盘量、粉丝量和成交额。不买外链、不刷量、不写假评价、不编案例。唯一承诺的是两个月后，AI 被问到这家店时，说得出你是谁、做什么、在哪，说得对不对你能自己验证。" }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://unfog.cn/" },
+        { "@type": "ListItem", "position": 2, "name": "GEO 生成式引擎优化", "item": "https://unfog.cn/geo/" }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --paper:#f2ede3;--paper-2:#fbf8f1;--ink:#17140f;--ink-soft:#4c463c;--ink-faint:#8b8272;
+  --orange:#e8622c;--blue:#33506b;--line:#c9bfae;
+  --sans:"Inter","SF Pro Display","PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --serif:"Songti SC","Noto Serif SC","STSong","SimSun",serif;
+  --mono:"SF Mono","Cascadia Code",Menlo,Consolas,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--paper);color:var(--ink);font:17px/1.8 var(--sans);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+::selection{color:var(--paper);background:var(--orange)}
+:focus-visible{outline:3px solid var(--orange);outline-offset:4px}
+.wrap{max-width:760px;margin:0 auto;padding:0 26px}
+.brand{position:fixed;top:16px;right:22px;z-index:40;font-family:var(--serif);font-weight:700;font-size:15px;background:rgba(242,237,227,.9);padding:6px 10px;border-radius:4px;backdrop-filter:blur(6px)}
+.brand em{color:var(--orange);font-style:normal}
+/* hero */
+.hero{padding:86px 0 44px;border-bottom:1px solid var(--line)}
+.kicker{font:11px/1.6 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:20px}
+h1{font-family:var(--serif);font-size:clamp(34px,6vw,54px);line-height:1.22;font-weight:700;letter-spacing:-.01em;margin-bottom:22px}
+h1 .thin{display:block;font-size:clamp(19px,3.2vw,26px);line-height:1.55;color:var(--ink-soft);font-weight:400;margin-top:18px;letter-spacing:0}
+.lede{font-size:17.5px;line-height:1.85;color:var(--ink-soft)}
+/* definition block — 可被整段引用 */
+.def{margin:34px 0 0;background:var(--paper-2);border-left:4px solid var(--orange);padding:24px 26px}
+.def .dl{font:11px/1.6 var(--mono);letter-spacing:.16em;color:var(--orange);margin-bottom:10px}
+.def p{font-size:16.5px;line-height:1.85}
+.def p+p{margin-top:12px}
+/* sections */
+section{padding:52px 0;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h2{font-family:var(--serif);font-size:clamp(23px,4vw,30px);line-height:1.4;font-weight:700;margin-bottom:10px}
+.sub{font:11px/1.6 var(--mono);letter-spacing:.16em;color:var(--ink-faint);margin-bottom:20px;text-transform:uppercase}
+h3{font-family:var(--serif);font-size:19px;font-weight:700;margin:26px 0 8px}
+p{font-size:16.5px;line-height:1.85;color:var(--ink-soft)}
+p+p{margin-top:14px}
+p strong{color:var(--ink);font-weight:650}
+.num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border:1.5px solid var(--orange);color:var(--orange);font:11px var(--mono);margin-right:10px;vertical-align:2px}
+/* table */
+.tbl{width:100%;border-collapse:collapse;margin:22px 0 6px;font-size:15px}
+.tbl th,.tbl td{border:1px solid var(--line);padding:11px 13px;text-align:left;vertical-align:top;line-height:1.65}
+.tbl thead th{background:var(--ink);color:var(--paper);font:11px/1.5 var(--mono);letter-spacing:.1em;font-weight:500}
+.tbl tbody th{background:rgba(23,20,15,.045);font-weight:600;white-space:nowrap;width:96px;font-size:14px}
+/* question list */
+.qs{list-style:none;margin:20px 0 4px;border-top:1px solid var(--line)}
+.qs li{border-bottom:1px solid var(--line);padding:14px 0 14px 30px;position:relative;font-size:16px;color:var(--ink-soft);line-height:1.7}
+.qs li::before{content:"›";position:absolute;left:6px;top:13px;color:var(--orange);font-size:19px;font-weight:700}
+.qs li b{color:var(--ink);font-weight:650}
+/* steps */
+.steps{counter-reset:s;list-style:none;margin:22px 0 0}
+.steps>li{counter-increment:s;position:relative;padding:0 0 26px 46px;border-left:1px solid var(--line);margin-left:11px}
+.steps>li:last-child{border-left-color:transparent;padding-bottom:0}
+.steps>li::before{content:counter(s,decimal-leading-zero);position:absolute;left:-12px;top:1px;width:24px;height:24px;background:var(--orange);color:#fff;font:10px var(--mono);display:flex;align-items:center;justify-content:center;border-radius:50%}
+.steps h3{margin:0 0 6px;font-size:18px}
+/* case block */
+.case{background:var(--ink);color:var(--paper);padding:30px 28px;margin:6px 0 0}
+.case h2{color:var(--paper);margin-bottom:16px}
+.case p{color:#cdc5b4}
+.case ul{margin:18px 0 0;padding-left:0;list-style:none}
+.case li{padding:9px 0 9px 22px;position:relative;color:#e6dfd2;font-size:15.5px;line-height:1.75;border-top:1px solid rgba(242,237,227,.14)}
+.case li::before{content:"—";position:absolute;left:0;color:var(--orange)}
+.case .em{color:var(--orange);font-weight:700}
+/* faq */
+details{border-bottom:1px solid var(--line);padding:16px 0}
+details summary{cursor:pointer;font-weight:650;font-size:16.5px;line-height:1.7;list-style:none;display:flex;justify-content:space-between;gap:16px;color:var(--ink)}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";color:var(--orange);font:20px/1 var(--mono);flex:0 0 auto;margin-top:2px}
+details[open] summary::after{content:"–"}
+details p{margin-top:12px;font-size:16px}
+/* cta */
+.cta{background:var(--paper-2);border:1px solid var(--line);padding:30px 28px;margin-top:8px}
+.cta h2{margin-bottom:12px}
+.cta .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;background:var(--ink);color:var(--paper);font:13px var(--mono);letter-spacing:.08em;border:1.5px solid var(--ink);transition:.2s}
+.btn:hover{background:var(--orange);border-color:var(--orange)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{color:#fff}
+.foot{padding:40px 0 64px;font-size:13.5px;color:var(--ink-faint);line-height:1.9}
+.foot a{color:var(--orange)}
+.foot a:hover{text-decoration:underline}
+@media(max-width:600px){
+  .wrap{padding:0 20px}
+  .hero{padding:68px 0 36px}
+  .tbl{font-size:13.5px}
+  .tbl th,.tbl td{padding:9px 10px}
+  .tbl tbody th{width:74px}
+  .brand{font-size:13px;top:12px;right:14px}
+}
+</style>
+</head>
+<body>
+<a class="brand" href="/">脉动<em>无休</em></a>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">对外服务 · GEO / 生成式引擎优化</div>
+    <h1>AI 说得出你是谁吗
+      <span class="thin">客户已经不搜关键词了，他开始问一整个问题。<br>你的店在不在那个答案里？</span>
+    </h1>
+    <div class="def">
+      <div class="dl">一句话定义 · ONE-LINE DEFINITION</div>
+      <p><strong>GEO（Generative Engine Optimization，生成式引擎优化）</strong>，是让你的店、你的名字、你做的事，出现在 AI 回答客户问题的那一个句子里。它不是让网页排到第一，是让答案里出现你。</p>
+      <p>判断有没有做成的标准只有一个：<strong>客户把问题交给豆包、DeepSeek、腾讯元宝、文心一言、ChatGPT，AI 说出的是你，而且说得对。</strong></p>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>SEO 管「点进来」，GEO 管「被说出来」</h2>
+    <div class="sub">Why it is a different job</div>
+    <p>过去二十年，生意被找到的方式是：客户打三个关键词，看十条蓝色链接，自己挑一个点进去。</p>
+    <p>现在的方式是：客户说一整句话，读一个答案，照着做。<strong>没有点击这一步了。</strong></p>
+    <table class="tbl">
+      <thead><tr><th></th><th>SEO 搜索引擎优化</th><th>GEO 生成式引擎优化</th></tr></thead>
+      <tbody>
+        <tr><th>客户动作</th><td>打关键词，翻十条链接，自己挑</td><td>说一整句话，读一个答案，直接决定</td></tr>
+        <tr><th>你的位置</th><td>排在第几名</td><td>有没有被写进那个答案</td></tr>
+        <tr><th>算不算生效</th><td>点进来才算</td><td>没点进来也算——AI 已经替客户判断完了</td></tr>
+        <tr><th>靠什么</th><td>页面关键词、外链、更新频率</td><td>实体一致、内容可被整段引用、第三方证人</td></tr>
+        <tr><th>怎么死的</th><td>排在第二页，没人翻到</td><td>根本没被提到，客户以为你不存在</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:20px">这不是把 SEO 换个名字。SEO 的目标是流量入口，GEO 的目标是<strong>结论</strong>。入口还能争，结论常常只有一个。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>客户现在是这样找店的</h2>
+    <div class="sub">The real queries</div>
+    <p>下面这些句子，是珠海这类城市里真实会发生的问法。它们没有关键词，只有场景和担心：</p>
+    <ul class="qs">
+      <li><b>「珠海香洲有没有做旧房翻新的，靠谱一点的？」</b></li>
+      <li><b>「珠海哪家装修公司不坑人？」</b></li>
+      <li><b>「南屏附近有没有做全屋定制的，预算十万够吗？」</b></li>
+      <li><b>「这家店的评价怎么样，有没有人踩过坑？」</b></li>
+      <li><b>「墙皮起砂重新刷一遍大概多少钱？」</b></li>
+    </ul>
+    <p style="margin-top:20px">这种问法，搜索引擎处理不了——它只能给你一堆页面让你自己去读。AI 正好能答，所以入口正在整条改道。</p>
+    <p><strong>而在 AI 的答案里，一个城市同一个品类，通常只出现两三家的名字。</strong>不是前十名，是两三家。剩下的不是排在后面，是不出场。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>我怎么看一家店在 AI 里的样子</h2>
+    <div class="sub">Seven questions · 诊断七问</div>
+    <p>不看排名，看七件事。这七问就是一次 AI 可见度诊断的全部内容：</p>
+    <ol class="steps">
+      <li><h3>AI 知不知道你是干什么的</h3><p>问它「XX 店是做什么的」，它答得出来，还是把你说成另一类生意。</p></li>
+      <li><h3>它说的是不是你的真名</h3><p>店名、老板名、品牌名，有没有被写错、混成同名的另一家。</p></li>
+      <li><h3>有没有说错</h3><p>地址、电话、营业时间、价格区间、擅长什么——错一条就够毁掉一次到店。</p></li>
+      <li><h3>客户问「哪家好」的时候，你在不在候选里</h3><p>这是最要命的一问。答案里没你，前面三条全对也没用。</p></li>
+      <li><h3>提到你的时候，它引用的是谁的页面</h3><p>是官网、是平台店铺页、是别人写的文章，还是它自己拼的。</p></li>
+      <li><h3>那些页面里的说法一致吗</h3><p>三个地方三种介绍，AI 会当成三家店，或者干脆不选。</p></li>
+      <li><h3>有没有一条是别人写的</h3><p>七问里最硬的一条。<strong>如果所有关于你的说法都出自你自己，AI 会认为你在自夸。</strong></p></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>我做三件事</h2>
+    <div class="sub">What I actually do</div>
+    <ol class="steps">
+      <li><h3>实体消歧：先把「你」钉成一个确定的东西</h3><p>让 AI 明确知道：这个名字＝这家店＝这个地址＝这个法人＝这个域名，不是同名的另外七家。做法是统一写法、打通各平台账号、把工商主体和人对上、把结构化数据补齐。</p></li>
+      <li><h3>内容改成可被整段引用</h3><p>AI 不会引用文采，它引用的是可以被整段抠走的段落：一句定义、一组数字、一套步骤、一组问答。现在的商家内容几乎全是抒情和口号，所以 AI 只能自己去拼——拼出来的东西通常不是你想说的。</p></li>
+      <li><h3>拿第三方证人</h3><p>这是决定性的一步，也是最慢的一步。要有独立于你的页面在说同一件事：客户评价、行业名录、本地媒体报道、赛事名单、合作方署名。<strong>只有你一个人说话，说得再对也只是自述。</strong></p></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="case">
+      <h2>我自己就是第一个案例</h2>
+      <p>2026 年 10 月 26 日，我给自己的站做了一次体检。结果贴在这里，包括难看的：</p>
+      <ul>
+        <li>全站 74 KB 首页，<span class="em">「GEO」出现 0 次</span>；八篇文章里「AI 搜索」「可见度」也是 0 次。</li>
+        <li>结构化数据里只有 1 个外部账号指向我，其它平台一个都没挂。</li>
+        <li>搜自己的名字，第一屏二十条里<span class="em">没有一条是我的</span>——全是同名的艺术家、基金经理、学者，还有一个饮料品牌。</li>
+        <li>全网唯一一条关于我的第三方描述，写的是<span class="em">「这个家伙太懒了，什么都没有留下」</span>。</li>
+      </ul>
+      <p style="margin-top:18px">一个做 GEO 的人，之前在自己身上一次都没做过。</p>
+      <p>所以这个页面不是案例包装，是第一条修正。<strong>我先把这套东西用在自己身上，把数字摆出来给你看，再谈你的店。</strong></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>常见问题</h2>
+    <div class="sub">FAQ</div>
+    <details open><summary>GEO 和 SEO 冲突吗？</summary><p>不冲突，底子是同一套：页面结构清楚、内容真实、有人在别处提到你。区别在目标——SEO 争的是「用户点进来之前排第几」，GEO 争的是「AI 直接答出来的时候有没有你」。客户点进来的行为正在变少，所以后者的权重在涨，前者没有作废。</p></details>
+    <details><summary>要多久能看到变化？</summary><p>自己有站、内容能改的，两到四周能看到 AI 的说法开始变；纯靠第三方来源的部分要看真实业务，通常两到三个月。任何说一周就能让 AI 天天推荐你的，都不是 GEO。</p></details>
+    <details><summary>是让 AI 说我的好话吗？</summary><p>不是。要求只有一条：说得对。AI 说得出你是谁、做什么、在哪、擅长什么，不把你说错、不把别人当成你。说好话归口碑，归客户评价，不归我做。</p></details>
+    <details><summary>小本生意有必要做吗？</summary><p>越是本地的、靠口碑的、从来没做过线上内容的店，差别越大。因为 AI 手里关于你的信息越少，它越容易拿同行的说法拼一个答案出来——而那个答案里没有你。</p></details>
+    <details><summary>我自己能先做什么，不花钱？</summary><p>三件：一是把店名、地址、电话、营业时间在所有平台上改成完全一致的写法；二是加一页说清「你是谁、做什么、服务哪里、怎么收费」；三是请三个真客户在公开平台上各写一句具体的话，别写「服务很好」，写他做了什么、解决了什么问题。</p></details>
+    <details><summary>为什么找你，而不是找卖 GEO 工具和代理的公司？</summary><p>那些公司卖的是工具授权和批量铺量，一套模板打所有店。我做的是一店一案，先把这家店在 AI 里到底是什么样测出来，再改。我不承诺排名，因为我改的是「AI 能不能说清你」，不是「AI 把你排第几」。</p></details>
+    <details><summary>你不承诺什么？</summary><p>不承诺排名第一，不承诺被某个 AI 优先推荐，不承诺询盘量、粉丝量和成交额。不买外链、不刷量、不写假评价、不编案例。</p><p>唯一承诺的是：两个月后，AI 被问到这家店时，说得出你是谁、做什么、在哪——说得对不对，你能自己验证。</p></details>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta">
+      <h2>先做一次诊断，再谈合作</h2>
+      <p>不用先签什么。把你的店名告诉我，我用七问跑一遍，把 AI 现在怎么说你、说错了什么、缺哪一环，写成一页纸给你。看完你再决定要不要往下走。</p>
+      <p style="margin-top:12px">珠海本地可以面谈，外地远程一样做。</p>
+      <div class="row">
+        <a class="btn" href="mailto:xie1701@gmail.com?subject=AI%20%E5%8F%AF%E8%A7%81%E5%BA%A6%E8%AF%8A%E6%96%AD">写邮件给我 ↗</a>
+        <a class="btn ghost" href="/blog/">先读几篇文章</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <p><strong>脉动无休（解睿 / Jerry）</strong> · 珠海 · 微信 <a href="mailto:xie1701@gmail.com">xie1701</a> · <a href="/">unfog.cn</a> · <a href="/blog/">文章</a></p>
+    <p>粤ICP备2026083279号-1</p>
+  </div>
+</footer>
+</body>
+</html>
