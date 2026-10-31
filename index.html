@@ -140,6 +140,20 @@ h1 .hl{color:var(--orange-deep);white-space:nowrap}
 .scn p{margin:0;font-size:15px;line-height:1.7;color:var(--ink-soft)}
 .scn p b{display:inline-block;font:700 11px var(--mono);letter-spacing:.1em;color:var(--paper);background:var(--ink);padding:1px 7px;margin-right:8px;vertical-align:2px}
 .scn p.fix b{background:var(--orange-deep)}
+.case{margin-top:clamp(40px,5vw,64px);display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr);background:var(--ink);color:var(--paper);border:2px solid var(--ink);box-shadow:12px 12px 0 var(--orange-deep)}
+.case-num{padding:clamp(26px,3.4vw,44px);border-right:2px solid #3a342b;display:flex;flex-direction:column;gap:6px}
+.case-k{margin:0 0 8px;font:700 12px var(--mono);letter-spacing:.14em;color:#a9a08f}
+.case-big{margin:0;font:900 clamp(64px,8vw,112px)/.95 var(--serif);color:var(--orange);font-variant-numeric:tabular-nums}
+.case-big small{font-size:.24em;margin-left:8px;color:var(--paper);letter-spacing:.04em}
+.case-big.b2{font-size:clamp(40px,4.6vw,64px);margin-top:18px}
+.case-sub{margin:0;font-size:15px;color:#d8cfbd}
+.case-body{padding:clamp(26px,3.4vw,44px);display:flex;flex-direction:column;gap:20px}
+.case-body h3{font-size:clamp(21px,2.2vw,28px);line-height:1.4;font-weight:900}
+.case dl{margin:0;display:grid;gap:14px}
+.case dl div{display:grid;grid-template-columns:64px minmax(0,1fr);gap:14px;align-items:baseline;padding-top:14px;border-top:1px solid #3a342b}
+.case dt{font:700 12px var(--mono);letter-spacing:.1em;color:var(--orange)}
+.case dd{margin:0;font-size:15.5px;line-height:1.75;color:#e6dfd0}
+@media (max-width:900px){.case{grid-template-columns:minmax(0,1fr);box-shadow:7px 7px 0 var(--orange-deep)}.case-num{border-right:0;border-bottom:2px solid #3a342b}.case dl div{grid-template-columns:minmax(0,1fr);gap:4px}}
 .scn-close{margin:clamp(36px,5vw,56px) 0 0;font:900 clamp(22px,2.8vw,34px)/1.4 var(--serif);text-align:center}
 .scn-close em{font-style:normal;background:linear-gradient(transparent 62%,rgba(232,98,44,.45) 62%)}
 
@@ -490,6 +504,22 @@ h1 .hl{color:var(--orange-deep);white-space:nowrap}
           <p class="fix"><b>我改</b>先定一张大家都认的流程图，再分头干。</p></div>
       </article>
     </div>
+    <article class="case" data-in="lift" aria-labelledby="case-t">
+      <div class="case-num">
+        <p class="case-k">一个做成的例子 · 2021—2024</p>
+        <p class="case-big" data-count="36">36<small>小时</small></p>
+        <p class="case-sub">翻新一套旧房，业主只在外面住一晚</p>
+        <p class="case-big b2" data-count="20">20<small>余个项目</small></p>
+      </div>
+      <div class="case-body">
+        <h3 id="case-t">把一套要几周、靠老师傅盯的翻新，排成别人照着能做的流程。</h3>
+        <dl>
+          <div><dt>原来</dt><dd>旧房翻新一做几周，业主得搬出去住，工期一拖再拖，现场离不开老师傅和项目经理。</dd></div>
+          <div><dt>我改</dt><dd>把人、材料、工具、工序一环环摆出来，找到卡工期的那一环，重排工序和交接；配上数字化工具，施工全程看得见。</dd></div>
+          <div><dt>结果</dt><dd>第一天早上交钥匙，第二天晚上拿回钥匙。这套流程交付了 20 余个项目，每做一个改一次。</dd></div>
+        </dl>
+      </div>
+    </article>
     <p class="scn-close" data-in="rise">把<em>「只有某个人会的」</em>，变成<em>「别人也能做的」</em>。</p>
   </div>
 </section>
@@ -616,10 +646,10 @@ h1 .hl{color:var(--orange-deep);white-space:nowrap}
       </div>
       <div class="cv-track" id="cv-track">
         <article class="cv-item"><span class="cv-year">2010—2014</span><span class="cv-role">装修公司创业 · 设计与施工</span><h3>从量房做到交房</h3><p><b>学到</b>工地的事不是讲出来的，是排出来的。</p></article>
-        <article class="cv-item"><span class="cv-year">2014—2018</span><span class="cv-role">VR / AR 产品 · 上海</span><h3>空间展示做成产品</h3><p><b>学到</b>硬件和软件的团队，得先对上同一张图。</p></article>
+        <article class="cv-item"><span class="cv-year">2014—2018</span><span class="cv-role">VR / AR 产品负责人 · 浙江、上海</span><h3>空间展示做成产品</h3><p><b>学到</b>硬件和软件的团队，得先对上同一张图。</p></article>
         <article class="cv-item"><span class="cv-year">2018—2021</span><span class="cv-role">企业软件实施与培训</span><h3>让买来的工具真有人用</h3><p><b>学到</b>工具好不好，看一线员工第二周还用不用。</p></article>
-        <article class="cv-item"><span class="cv-year">2021—2024</span><span class="cv-role">家装服务流程</span><h3>把现场交付拆成步骤</h3><p><b>学到</b>老师傅脑子里的东西，能写下来，就能教给人。</p></article>
-        <article class="cv-item key"><span class="cv-year">2024—2026</span><span class="cv-role">实体零售 · 经营负责人</span><h3>门店、激励和培训</h3><p><b>学到</b>罚款带不动人，规则清楚、能做到，才带得动。</p></article>
+        <article class="cv-item key"><span class="cv-year">2021—2024</span><span class="cv-role">名家色彩 · 创新产品经理</span><h3>36 小时翻新一套旧房</h3><p><b>做成</b>交付 20 余个项目。老师傅脑子里的东西，写下来就能教给人。</p></article>
+        <article class="cv-item"><span class="cv-year">2025—2026</span><span class="cv-role">安特美 · 董事长助理</span><h3>新业务、系统实施和培训</h3><p><b>学到</b>罚款带不动人，规则清楚、能做到，才带得动。</p></article>
         <article class="cv-item now"><span class="cv-year">2026—NOW</span><span class="cv-role">无休科技 · 独立顾问与 AI 产品</span><h3>一个人加 AI，做顾问也做产品</h3><p><b>正在</b>给珠海本地门店做经营顾问与内容；小微企业 AI 改善工具即将上线。</p></article>
       </div>
       <div class="cv-bar" aria-hidden="true"><i></i><span>继续往下滚，时间往右走 →</span></div>
