@@ -1,0 +1,56 @@
+/* 全站统一顶栏 · 2026-10-31 与首页 v5 对齐
+   用于 /blog/、/geo/ 与其下的文章页。独立命名空间 sb-，不碰各页原有 CSS。 */
+
+.sitebar{
+  --sb-paper:#f2ede3; --sb-ink:#17140f; --sb-orange:#b8451a; --sb-faint:#6b6355;
+  background:var(--sb-paper);
+  border-bottom:2px solid var(--sb-ink);
+  font-family:"PingFang SC","Helvetica Neue",sans-serif;
+  position:relative; z-index:40;
+}
+.sitebar-in{
+  width:min(1240px,calc(100% - 48px)); margin-inline:auto;
+  height:64px; display:flex; align-items:center; justify-content:space-between; gap:16px;
+}
+.sb-brand{
+  display:inline-flex; align-items:center; gap:9px;
+  font-family:"Songti SC","STSong","Noto Serif SC",serif; font-weight:900; font-size:16px;
+  letter-spacing:.06em; color:var(--sb-ink); text-decoration:none; white-space:nowrap;
+}
+.sb-brand img{width:28px;height:28px;display:block}
+.sb-brand i{
+  font:700 10px/1 "SF Mono",Menlo,monospace; letter-spacing:.16em;
+  font-style:normal; color:var(--sb-faint); margin-left:2px;
+}
+.sb-nav{display:flex; align-items:center; gap:20px; flex-wrap:wrap; justify-content:flex-end}
+.sb-nav a{
+  font:700 12px/1 "SF Mono",Menlo,monospace; letter-spacing:.1em;
+  color:var(--sb-ink); text-decoration:none; min-height:44px; display:inline-flex; align-items:center;
+  position:relative;
+}
+.sb-nav a::after{
+  content:""; position:absolute; left:0; right:0; bottom:9px; height:2px;
+  background:var(--sb-orange); transform:scaleX(0); transform-origin:0 50%;
+  transition:transform .3s cubic-bezier(.22,.61,.36,1);
+}
+.sb-nav a:hover::after,.sb-nav a.on::after{transform:scaleX(1)}
+.sb-nav a.on{color:var(--sb-orange)}
+.sb-cta{
+  padding:0 13px; border:2px solid var(--sb-ink); font-weight:700;
+  transition:background .2s,color .2s;
+}
+.sb-cta::after{display:none}
+.sb-cta:hover{background:var(--sb-ink); color:var(--sb-paper)}
+
+@media(max-width:900px){
+  .sitebar-in{width:calc(100% - 32px); height:58px; gap:10px}
+  .sb-nav{gap:14px}
+  .sb-nav a[data-anchor]{display:none}
+  .sb-brand i{display:none}
+}
+@media(max-width:520px){
+  .sb-brand{font-size:15px}
+  .sb-nav{gap:16px}
+  .sb-nav a{font-size:12px; letter-spacing:.04em}
+  .sb-cta{padding:0 9px}
+}

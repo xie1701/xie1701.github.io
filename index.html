@@ -21,9 +21,9 @@
 <meta property="og:image" content="https://unfog.cn/assets/share-card.png">
 <meta property="og:image:secure_url" content="https://unfog.cn/assets/share-card.png">
 <meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="500">
-<meta property="og:image:height" content="500">
-<meta property="og:image:alt" content="脉动无休（解睿 / Jerry）｜把事做成，让人也能做成">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="脉动无休（解睿 / Jerry）｜把事做成，让人也能做成。带过工地、门店和研发团队，现在用 AI 干活。">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="脉动无休（解睿 / Jerry）｜把事做成，让人也能做成">
 <meta name="twitter:description" content="带过施工现场、门店和研发团队，用 AI 干活。把只有某个人会的事，变成别人也能做的事。">
@@ -339,6 +339,14 @@ h1 .hl{color:var(--orange-deep);white-space:nowrap}
   .svc dl div{grid-template-columns:minmax(0,1fr);gap:2px}
   .svc.tool figure{max-width:260px}
   .footer{padding-bottom:calc(34px + env(safe-area-inset-bottom))}
+}
+/* 手机端可读性：mono 小标签从 10.5–11px 提到 12px，字距收一点防折行 */
+@media (max-width:640px){
+  .kicker,.btn small,.hero-tag,.scn-no,.work-top,.chip,.svc-no,.svc dt,.badge-soon,.day-no,.cv-item p b,.cv-bar span,.note small,.link .k{font-size:12px;letter-spacing:.1em}
+  .scn p b{font-size:12px;padding:2px 8px;letter-spacing:.06em}
+  .case-big small{font-size:12px}
+  .stat .num small{font-size:13px}
+  .stamp text{font-size:9.5px}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}

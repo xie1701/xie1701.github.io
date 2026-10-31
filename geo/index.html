@@ -189,17 +189,28 @@ details p{margin-top:12px;font-size:16px}
 .foot a:hover{text-decoration:underline}
 @media(max-width:600px){
   .wrap{padding:0 20px}
-  .hero{padding:68px 0 36px}
+  .hero{padding:44px 0 36px}
   .tbl{font-size:13.5px}
   .tbl th,.tbl td{padding:9px 10px}
   .tbl tbody th{width:74px}
   .brand{font-size:13px;top:12px;right:14px}
+  /* 手机端可读性：11px 的 mono 标签与表头提到 12px，字距收一点 */
+  .kicker,.def .dl,.sub,.tbl thead th{font-size:12px;letter-spacing:.1em}
 }
 </style>
+<link rel="stylesheet" href="/assets/site-nav.css">
 </head>
 <body>
-<a class="brand" href="/">脉动<em>无休</em></a>
-
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="sb-brand" href="/"><img src="/assets/logo-mark.png" alt="脉动无休标志" width="30" height="30">脉动无休<i>MAIDONG WUXIU</i></a>
+    <nav class="sb-nav" aria-label="全站导航">
+      <a href="/#scenes" data-anchor>现场</a><a href="/#ai" data-anchor>AI</a><a href="/#works" data-anchor>作品</a><a href="/#services" data-anchor>服务</a><a href="/#cv" data-anchor>履历</a>
+      <a href="/blog/">文章</a><a href="/geo/" class="on" aria-current="page">AI 可见度</a>
+      <a class="sb-cta" href="/#contact">聊一聊</a>
+    </nav>
+  </div>
+</header>
 <header class="hero">
   <div class="wrap">
     <div class="kicker">对外服务 · GEO / 生成式引擎优化</div>
