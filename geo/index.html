@@ -34,6 +34,16 @@
       "description": "GEO（生成式引擎优化，Generative Engine Optimization）是指让一家店、一个名字、一件事，出现在 AI 回答客户问题的那个句子里。做法分三步：实体消歧、内容改成可被整段引用、拿到独立于自己的第三方来源。不承诺 AI 排名，只承诺 AI 说得清、说得对。",
       "serviceType": ["生成式引擎优化", "AI 搜索优化", "AI 可见度诊断", "内容可引用化改造"],
       "provider": { "@id": "https://unfog.cn/#person" },
+      "parentOrganization": {
+        "@type": "Organization",
+        "@id": "https://unfog.cn/#org",
+        "name": "无休科技（珠海）有限公司",
+        "legalName": "无休科技（珠海）有限公司",
+        "url": "https://unfog.cn/",
+        "founder": { "@id": "https://unfog.cn/#person" },
+        "address": { "@type": "PostalAddress", "addressLocality": "珠海", "addressRegion": "广东", "addressCountry": "CN" },
+        "sameAs": ["https://www.tianyancha.com/company/8131203672"]
+      },
       "areaServed": [
         { "@type": "City", "name": "珠海" },
         { "@type": "Country", "name": "中国（远程）" }
@@ -274,15 +284,24 @@ details p{margin-top:12px;font-size:16px}
   <div class="wrap">
     <div class="case">
       <h2>我自己就是第一个案例</h2>
-      <p>2026 年 10 月 26 日，我给自己的站做了一次体检。结果贴在这里，包括难看的：</p>
+      <p>2026 年 10 月 26 日上午，我给自己的站做了一次体检。结果贴在这里，包括难看的：</p>
       <ul>
-        <li>全站 74 KB 首页，<span class="em">「GEO」出现 0 次</span>；八篇文章里「AI 搜索」「可见度」也是 0 次。</li>
+        <li>首页 72 KB，<span class="em">「GEO」出现 0 次</span>；八篇文章里「AI 搜索」「可见度」也是 0 次。</li>
         <li>结构化数据里只有 1 个外部账号指向我，其它平台一个都没挂。</li>
         <li>搜自己的名字，第一屏二十条里<span class="em">没有一条是我的</span>——全是同名的艺术家、基金经理、学者，还有一个饮料品牌。</li>
-        <li>全网唯一一条关于我的第三方描述，写的是<span class="em">「这个家伙太懒了，什么都没有留下」</span>。</li>
+        <li>最靠前的一个第三方落点是个空页面，站方自动生成的介绍只有一句<span class="em">「什么都没有留下」</span>。</li>
       </ul>
-      <p style="margin-top:18px">一个做 GEO 的人，之前在自己身上一次都没做过。</p>
-      <p>所以这个页面不是案例包装，是第一条修正。<strong>我先把这套东西用在自己身上，把数字摆出来给你看，再谈你的店。</strong></p>
+      <p style="margin-top:26px;color:var(--orange);font:11px/1.6 var(--mono);letter-spacing:.16em">同一天改掉的 / FIXED THE SAME DAY</p>
+      <ul>
+        <li>你正在看的这一页，就是第一条修正：站内「GEO」词频从 0 到 38。</li>
+        <li>那个空落点填了，现在写的是「设计师 · TOC 实践者 · AI 应用实践者」，作品也摆上去了。</li>
+        <li>外部账号指向从 1 条加到 2 条；服务主体明确写成无休科技（珠海）有限公司。</li>
+      </ul>
+      <p style="margin-top:26px;color:var(--orange);font:11px/1.6 var(--mono);letter-spacing:.16em">还没改掉的 / STILL OPEN</p>
+      <ul>
+        <li>第一屏那二十条，一条都不是我。这一部分不靠改自己的站，靠别人愿意写我——<span class="em">这才是 GEO 真正的难处，也是最慢的一段。</span></li>
+      </ul>
+      <p style="margin-top:18px">一个做 GEO 的人，之前在自己身上一次都没做过。所以这个页面不是案例包装，是第一条修正：<strong>我先把这套东西用在自己身上，把数字摆出来，包括改不动的那些，再谈你的店。</strong></p>
     </div>
   </div>
 </section>
@@ -318,7 +337,7 @@ details p{margin-top:12px;font-size:16px}
 <footer class="foot">
   <div class="wrap">
     <p><strong>脉动无休（解睿 / Jerry）</strong> · 珠海 · 微信 <a href="mailto:xie1701@gmail.com">xie1701</a> · <a href="/">unfog.cn</a> · <a href="/blog/">文章</a></p>
-    <p>粤ICP备2026083279号-1</p>
+    <p>本站由 <strong style="color:#4c463c">无休科技（珠海）有限公司</strong> 运营 · 粤ICP备2026083279号-1</p>
   </div>
 </footer>
 </body>

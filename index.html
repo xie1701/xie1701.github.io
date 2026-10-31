@@ -3,489 +3,334 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0b1118">
-<title>脉动无休（解睿 / Jerry）｜设计思维 × TOC × AI 产品实践</title>
-<meta name="description" content="脉动无休（解睿 / Jerry）的个人网站：用设计思维与 TOC 制约理论拆解生意与运营问题，亲手做成能运行的 AI 产品。让隐性经验，变成信任资产。已上线生意说、住明白。">
+<meta name="theme-color" content="#17140f">
+<title>脉动无休（解睿 / Jerry）｜把事做成，让人也能做成</title>
+<meta name="description" content="解睿（脉动无休 / Jerry）：带过施工现场、门店和研发团队，用 AI 干活的经营改善顾问。把只有某个人会的事，变成别人也能做的事。已上线生意说、住明白、有一套。">
 <link rel="canonical" href="https://unfog.cn/">
-<!-- 图标：由 assets/logo-master.png 生成，见 _build/make-icons.py -->
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/favicon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
-<!-- 分享卡（微信 / 飞书 / Twitter 等） -->
+<link rel="preload" as="image" href="assets/v5/hero-handover.webp" type="image/webp">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="脉动无休">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:url" content="https://unfog.cn/">
-<meta property="og:title" content="脉动无休（解睿 / Jerry）｜设计思维 × TOC × AI 产品实践">
-<meta property="og:description" content="用设计思维与 TOC 制约理论拆解生意问题，从现场找到真约束，亲手做成能运行、能验证的 AI 产品。已上线：生意说、住明白。">
+<meta property="og:title" content="脉动无休（解睿 / Jerry）｜把事做成，让人也能做成">
+<meta property="og:description" content="带过施工现场、门店和研发团队，用 AI 干活。把只有某个人会的事，变成别人也能做的事。">
 <meta property="og:image" content="https://unfog.cn/assets/share-card.png">
 <meta property="og:image:secure_url" content="https://unfog.cn/assets/share-card.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="500">
 <meta property="og:image:height" content="500">
-<meta property="og:image:alt" content="脉动无休（解睿 / Jerry）｜设计思维 × TOC × AI 产品实践">
+<meta property="og:image:alt" content="脉动无休（解睿 / Jerry）｜把事做成，让人也能做成">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="脉动无休（解睿 / Jerry）｜设计思维 × TOC × AI 产品实践">
-<meta name="twitter:description" content="用设计思维与 TOC 制约理论拆解生意问题，从现场找到真约束，亲手做成能运行、能验证的 AI 产品。已上线：生意说、住明白。">
+<meta name="twitter:title" content="脉动无休（解睿 / Jerry）｜把事做成，让人也能做成">
+<meta name="twitter:description" content="带过施工现场、门店和研发团队，用 AI 干活。把只有某个人会的事，变成别人也能做的事。">
 <meta name="twitter:image" content="https://unfog.cn/assets/share-card.png">
 <style>
 :root{
   color-scheme:light;
-  --paper:#f2ede3;
-  --paper-2:#fbf8f1;
-  --ink:#17140f;
-  --ink-soft:#4c463c;
-  --ink-faint:#8b8272;
-  --orange:#e8622c;
-  --blue:#33506b;
-  --cyan:#b5d7d8;
-  --deep:#0b1118;
-  --deep-2:#111c27;
+  --paper:#f2ede3;--paper-2:#fbf8f1;--paper-3:#e9e2d4;
+  --ink:#17140f;--ink-soft:#4c463c;--ink-faint:#6b6355;
+  --orange:#e8622c;--orange-deep:#b8451a;
   --line:#c9bfae;
   --sans:"Inter","SF Pro Display","PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;
   --serif:"Songti SC","Noto Serif SC","STSong","SimSun",serif;
   --mono:"SF Mono","Cascadia Code",Menlo,Consolas,monospace;
   --wrap:1240px;
   --ease:cubic-bezier(.22,.61,.36,1);
+  --spring:cubic-bezier(.34,1.56,.64,1);
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:64px}
-body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.7 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-x:clip}
 a{color:inherit;text-decoration:none}
-button,a{-webkit-tap-highlight-color:transparent}
-::selection{color:var(--paper);background:var(--orange)}
+img{display:block;max-width:100%;height:auto}
+button{font:inherit;color:inherit}
+::selection{color:var(--paper);background:var(--ink)}
 :focus-visible{outline:3px solid var(--orange);outline-offset:4px}
-::-webkit-scrollbar{width:11px}
-::-webkit-scrollbar-track{background:var(--paper)}
-::-webkit-scrollbar-thumb{background:var(--ink);border:3px solid var(--paper);border-radius:8px}
-/* Paper grain over everything */
-body::after{content:"";position:fixed;inset:0;z-index:95;pointer-events:none;opacity:.55;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.05'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+body::after{content:"";position:fixed;inset:0;z-index:95;pointer-events:none;opacity:.5;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.09 0 0 0 0 0.08 0 0 0 0 0.06 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .wrap{width:min(var(--wrap),calc(100% - 64px));margin-inline:auto;position:relative}
-.mono{font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase}
-.eyebrow{font:11px/1.5 var(--mono);letter-spacing:.16em;text-transform:uppercase}
-/* Scroll progress hairline */
-.progress{position:fixed;top:0;left:0;height:4px;width:0;background:var(--orange);z-index:99}
-/* Trailing cursor ring (fine pointers only) */
-.cursor-ring{position:fixed;top:0;left:0;width:34px;height:34px;border:1.5px solid var(--ink);border-radius:50%;pointer-events:none;z-index:96;transform:translate(-50%,-50%);transition:width .25s var(--ease),height .25s var(--ease),border-color .25s,opacity .3s;opacity:0}
-.cursor-ring.on{opacity:.75}
-.cursor-ring.hot{width:56px;height:56px;border-color:var(--orange)}
-/* Translucent sticky nav */
-.floatnav{position:fixed;top:0;left:0;right:0;z-index:60;transform:translateY(-102%);transition:transform .4s var(--ease);background:rgba(23,20,15,.82);-webkit-backdrop-filter:saturate(180%) blur(18px);backdrop-filter:saturate(180%) blur(18px);border-bottom:2px solid var(--ink);color:var(--paper)}
-.floatnav.show{transform:none}
-.floatnav .wrap{height:56px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.floatnav .fn-brand{display:inline-flex;align-items:baseline;gap:10px;font:700 15px var(--serif);letter-spacing:.06em}
-.floatnav .fn-brand i{font:10px var(--mono);letter-spacing:.14em;color:var(--orange);font-style:normal}
-.floatnav nav{display:flex;align-items:center;gap:20px}
-.floatnav nav a{display:inline-flex;align-items:center;min-height:44px;color:#cdc5b4;font:12px var(--mono);letter-spacing:.1em;transition:color .2s}
-.floatnav nav a:hover{color:#fff}
-.floatnav .nav-cta{padding:0 13px;color:var(--paper);border:1.5px solid var(--orange)}
-/* ============ HERO ============ */
-.hero{position:relative;isolation:isolate;overflow:hidden;min-height:760px;margin:18px auto 0;width:min(1480px,calc(100% - 36px));background:var(--deep);color:#f1f3f3;border:2px solid var(--ink);box-shadow:8px 8px 0 rgba(23,20,15,.9)}
-.hero::before{content:"";position:absolute;inset:0;z-index:-2;background-image:linear-gradient(rgba(181,215,216,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(181,215,216,.07) 1px,transparent 1px);background-size:52px 52px;background-position:center;mask-image:linear-gradient(90deg,#000 0%,#000 62%,transparent 100%)}
-.hero::after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,rgba(11,17,24,.97) 0%,rgba(11,17,24,.92) 43%,rgba(11,17,24,.4) 100%)}
-.hero-inner{width:min(var(--wrap),calc(100% - 64px));margin-inline:auto;position:relative;z-index:1}
-.topbar{height:78px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(242,237,227,.18)}
-.brand{display:inline-flex;align-items:center;gap:12px;min-height:44px}
-.brand-logo{width:32px;height:32px;border-radius:26%;display:block;box-shadow:0 0 0 1px rgba(242,237,227,.2)}
-.fn-logo{width:24px;height:24px;border-radius:26%;display:block}
-.footer-brand{display:inline-flex;align-items:center;gap:10px}
-.footer-filing{color:var(--ink-faint)}
-.footer-filing a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
-.footer-filing a:hover{color:var(--orange)}
-.footer-logo{width:22px;height:22px;border-radius:26%;display:block}
-.brand-name{font:650 15px/1.2 var(--serif);letter-spacing:.06em}
-.brand-name small{display:block;margin-top:2px;color:#96a2ad;font:9px var(--mono);letter-spacing:.15em}
-.nav{display:flex;align-items:center;gap:24px}
-.nav a{display:inline-flex;align-items:center;min-height:44px;color:#bdc6cc;font:12px var(--mono);letter-spacing:.1em;transition:color .2s}
-.nav a:hover{color:#fff}
-.nav .nav-cta{padding:0 14px;color:var(--paper);border:1.5px solid var(--orange)}
-/* Giant vertical brand characters, ghosted on the right edge */
-.hero-vert{position:absolute;right:.8%;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;font:900 clamp(64px,9.5vw,138px)/1 var(--serif);letter-spacing:.12em;color:transparent;-webkit-text-stroke:1.5px rgba(242,237,227,.22);z-index:0;pointer-events:none;user-select:none}
-.hero-grid{min-height:640px;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(430px,.98fr);align-items:center;gap:10px;padding:54px 0 64px}
-.hero-copy{position:relative;z-index:2;max-width:680px;padding:10px 0 30px;transform:translateY(calc(var(--hp,0)*-52px)) scale(calc(1 - var(--hp,0)*.035));opacity:calc(1 - var(--hp,0)*.9);will-change:transform,opacity}
-.hero-copy .eyebrow{color:#9aa7b1;margin:0 0 25px}
-.hero-copy .eyebrow b{color:var(--orange);font-weight:500}
-h1{margin:0;font:900 clamp(38px,5.2vw,74px)/1.24 var(--serif);letter-spacing:.02em;font-weight:900;text-wrap:pretty}
-h1 span{display:block}
-h1 .accent{display:inline;color:var(--orange)}
-.hero-role{margin:24px 0 0;color:#c5ced4;font-size:15px;letter-spacing:.05em}
-.hero-copy .lede{max-width:540px;margin:12px 0 0;color:#a9b4bd;font-size:15px;line-height:1.9}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.button{min-height:50px;display:inline-flex;align-items:center;justify-content:center;padding:0 20px;border:1.5px solid rgba(242,237,227,.35);font:600 13px var(--sans);letter-spacing:.02em;transition:transform .2s,border-color .2s,background .2s,box-shadow .2s}
-.button:hover{transform:translate(-2px,-2px)}
-.button-primary{background:var(--orange);border-color:var(--orange);color:#171b1f;font-weight:700;box-shadow:4px 4px 0 rgba(242,237,227,.25)}
-.button-primary:hover{box-shadow:6px 6px 0 rgba(242,237,227,.3)}
-.button-quiet{color:#dce2e6}
-.button-quiet:hover{border-color:var(--cyan)}
-.hero-tags{display:flex;flex-wrap:wrap;gap:9px 18px;margin:28px 0 0;padding:0;list-style:none;color:#82909a;font:10px/1.6 var(--mono);letter-spacing:.09em;text-transform:uppercase}
-.hero-tags li::before{content:"/";color:var(--orange);margin-right:8px}
-/* Rotating circular stamp */
-.stamp{position:absolute;right:3.2%;bottom:9%;z-index:5;width:122px;height:122px;animation:spin 22s linear infinite;filter:drop-shadow(0 4px 12px rgba(0,0,0,.4));pointer-events:none}
-.stamp circle.face{fill:rgba(242,237,227,.94)}
-.stamp text{font:700 10.5px var(--mono);letter-spacing:.22em;fill:var(--ink)}
-.stamp .core{fill:none;stroke:var(--orange);stroke-width:2}
+.kicker{font:700 11px/1.4 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 14px}
+.kicker b{color:var(--ink);margin-right:10px}
+.on-ink .kicker{color:#a9a08f}.on-ink .kicker b{color:var(--orange)}
+h1,h2,h3{font-family:var(--serif);margin:0;letter-spacing:.01em}
+h2{font-size:clamp(30px,4vw,52px);line-height:1.18;font-weight:900}
+.lede{margin:16px 0 0;max-width:34em;color:var(--ink-soft);font-size:17px}
+.on-ink .lede{color:#cfc6b4}
+.sec{padding:clamp(70px,9vw,124px) 0}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr);gap:0;margin-bottom:clamp(36px,5vw,60px);max-width:760px}
+
+/* progress + nav */
+.progress{position:fixed;top:0;left:0;height:4px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:var(--orange);z-index:99}
+.topbar{position:absolute;top:0;left:0;right:0;z-index:20}
+.topbar .wrap,.floatnav .wrap{height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:inline-flex;align-items:center;gap:10px;font:900 17px var(--serif);letter-spacing:.06em}
+.brand img{width:30px;height:30px}
+.brand i{font:10px var(--mono);letter-spacing:.16em;font-style:normal;color:var(--ink-faint)}
+.nav{display:flex;align-items:center;gap:22px}
+.nav a{font:12px var(--mono);letter-spacing:.1em;display:inline-flex;align-items:center;min-height:44px;position:relative}
+.nav a:not(.nav-cta)::after{content:"";position:absolute;left:0;right:0;bottom:10px;height:2px;background:var(--orange);transform:scaleX(0);transform-origin:0 50%;transition:transform .3s var(--ease)}
+.nav a:not(.nav-cta):hover::after{transform:scaleX(1)}
+.nav-cta{padding:0 14px;border:2px solid var(--ink);font-weight:700;transition:background .2s,color .2s}
+.nav-cta:hover{background:var(--ink);color:var(--paper)}
+.floatnav{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(242,237,227,.9);-webkit-backdrop-filter:saturate(160%) blur(14px);backdrop-filter:saturate(160%) blur(14px);border-bottom:2px solid var(--ink);transform:translateY(-102%);visibility:hidden;transition:transform .4s var(--ease),visibility 0s linear .4s}
+.floatnav.show{transform:none;visibility:visible;transition:transform .4s var(--ease),visibility 0s}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 22px;border:2px solid var(--ink);font:700 15px var(--sans);letter-spacing:.02em;transition:transform .25s var(--spring),box-shadow .25s var(--ease),background .2s,color .2s;box-shadow:0 0 0 var(--ink)}
+.btn:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--ink)}
+.btn:active{transform:translate(0,0);box-shadow:0 0 0 var(--ink);transition-duration:.08s}
+.btn-ink{background:var(--ink);color:var(--paper)}
+.btn-ink:hover{box-shadow:5px 5px 0 var(--orange)}
+.btn small{font:11px var(--mono);letter-spacing:.08em;opacity:.7}
+
+/* hero */
+.hero-stage{position:relative}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:96px 0 70px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
+.hero-copy{position:relative;z-index:2}
+.hero-who{font:700 12px/1.6 var(--mono);letter-spacing:.14em;color:var(--ink-soft);margin:0 0 16px;display:flex;flex-wrap:wrap;gap:6px 14px}
+.hero-who span{display:inline-flex;align-items:center;gap:8px}
+.hero-who span+span::before{content:"";width:6px;height:6px;background:var(--orange);border-radius:50%}
+h1 .ln{white-space:nowrap}
+h1{font-size:clamp(34px,5vw,80px);line-height:1.12;font-weight:900;letter-spacing:-.01em}
+h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+h1 .ln i{display:block;font-style:normal}
+h1 .hl{color:var(--orange-deep);white-space:nowrap}
+.hero-sub{margin:20px 0 32px;font-size:clamp(17px,1.5vw,20px);line-height:1.75;color:var(--ink-soft);max-width:27em}
+.hero-sub b{color:var(--ink)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px}
+.hero-art{position:relative;z-index:1}
+.print{position:relative;border:2px solid var(--ink);background:var(--paper-2);box-shadow:12px 12px 0 var(--ink)}
+.print img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.hero-art .print{transform:rotate(1.4deg)}
+.stamp{position:absolute;left:-40px;bottom:-52px;width:136px;height:136px;z-index:3;border-radius:50%;background:var(--paper);border:2px solid var(--ink);box-shadow:5px 5px 0 var(--ink)}
+.stamp svg{width:100%;height:100%;animation:spin 22s linear infinite}
+.stamp text{font:700 10.5px var(--mono);letter-spacing:.24em;fill:var(--ink)}
+.stamp .core{position:absolute;inset:34px;border-radius:50%;background:var(--orange-deep);color:var(--paper);display:grid;place-items:center;text-align:center;font:900 15px/1.15 var(--serif)}
 @keyframes spin{to{transform:rotate(360deg)}}
-/* CSS 3D workbench */
-.spatial{height:510px;position:relative;perspective:1050px;perspective-origin:50% 48%;--tilt-x:0deg;--tilt-y:0deg;--shift-y:0px;z-index:2}
-.spatial::before{content:"";position:absolute;inset:8% 3%;background:radial-gradient(ellipse at 53% 52%,rgba(72,111,128,.16),transparent 56%);pointer-events:none}
-.spatial-label{position:absolute;z-index:4;font:10px/1.5 var(--mono);letter-spacing:.12em;color:#98a7b1;text-transform:uppercase}
-.spatial-label.top{top:18px;right:4px;text-align:right}
-.spatial-label.bottom{bottom:12px;left:5px;color:#667985}
-.scene{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) translateY(var(--shift-y));transition:transform .18s ease-out}
-.scene::before,.scene::after{content:"";position:absolute;left:50%;top:49%;border:1px solid rgba(181,215,216,.22);border-radius:50%;transform-style:preserve-3d;pointer-events:none}
-.scene::before{width:380px;height:150px;transform:translate(-50%,-50%) rotateX(68deg) rotateZ(-28deg) translateZ(-36px)}
-.scene::after{width:310px;height:126px;border-color:rgba(232,98,44,.45);transform:translate(-50%,-50%) rotateX(67deg) rotateZ(48deg) translateZ(76px)}
-.axis{position:absolute;left:50%;top:49%;height:370px;width:1px;background:linear-gradient(transparent,rgba(181,215,216,.4),transparent);transform:translate(-50%,-50%) rotateZ(36deg) translateZ(-55px)}
-.axis.axis-b{height:330px;transform:translate(-50%,-50%) rotateZ(-52deg) translateZ(60px);background:linear-gradient(transparent,rgba(232,98,44,.55),transparent)}
-.cube{position:absolute;width:184px;height:184px;left:50%;top:49%;transform-style:preserve-3d;transform:translate(-50%,-50%) rotateX(-23deg) rotateY(32deg);animation:cube-turn 38s linear infinite}
-.cube-face{position:absolute;inset:0;display:grid;place-items:center;border:1px solid rgba(181,215,216,.62);background:linear-gradient(145deg,rgba(34,57,70,.88),rgba(12,23,32,.83));box-shadow:inset 0 0 35px rgba(115,154,170,.08);backface-visibility:visible}
-.cube-front{transform:translateZ(92px);overflow:hidden}
-.cube-back{transform:rotateY(180deg) translateZ(92px);background:rgba(232,98,44,.2)}
-.cube-right{transform:rotateY(90deg) translateZ(92px);background:linear-gradient(140deg,rgba(232,98,44,.6),rgba(28,43,52,.85))}
-.cube-left{transform:rotateY(-90deg) translateZ(92px)}
-.cube-top{transform:rotateX(90deg) translateZ(92px);background:rgba(137,167,180,.3)}
-.cube-bottom{transform:rotateX(-90deg) translateZ(92px);background:rgba(12,23,32,.94)}
-.cube-front::before{content:"";position:absolute;inset:18px;background:linear-gradient(rgba(181,215,216,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(181,215,216,.14) 1px,transparent 1px);background-size:20px 20px;mask-image:linear-gradient(135deg,#000,transparent 85%)}
-.cube-core{position:relative;z-index:1;width:74px;height:74px;display:grid;place-items:center;border:1px solid var(--orange);background:rgba(11,17,24,.88);box-shadow:0 0 38px rgba(232,98,44,.18);color:#f2f3f1;text-align:center;font:9px/1.5 var(--mono);letter-spacing:.1em}
-.cube-core::before,.cube-core::after{content:"";position:absolute;border:1px solid rgba(181,215,216,.45);width:15px;height:15px}
-.cube-core::before{left:-20px;top:12px;border-right:0;border-bottom:0}
-.cube-core::after{right:-20px;bottom:12px;border-left:0;border-top:0}
-.float-card{position:absolute;z-index:3;min-width:150px;padding:12px 14px;border:1px solid rgba(242,237,227,.4);background:rgba(23,20,15,.92);box-shadow:5px 5px 0 rgba(232,98,44,.35);transform-style:preserve-3d}
-.float-card .num{display:block;color:var(--orange);font:9px var(--mono);letter-spacing:.13em}
-.float-card::after{content:"";position:absolute;height:1px;width:52px;top:50%;background:linear-gradient(90deg,rgba(232,98,44,.72),transparent);transform-origin:left center;pointer-events:none}
-.float-a::after{left:100%;transform:rotate(18deg) translateZ(-24px)}
-.float-b::after{right:100%;transform:rotate(192deg) translateZ(-28px);background:linear-gradient(90deg,rgba(181,215,216,.7),transparent)}
-.float-c::after{left:48%;top:0;width:38px;transform:rotate(-68deg) translateZ(-20px);background:linear-gradient(90deg,rgba(181,215,216,.55),transparent)}
-.float-card:hover{border-color:var(--orange);box-shadow:6px 6px 0 rgba(232,98,44,.5)}
-.scene[data-focus="field"] .cube-front,.scene[data-focus="build"] .cube-right{border-color:var(--orange);box-shadow:inset 0 0 42px rgba(232,98,44,.2),0 0 20px rgba(232,98,44,.14)}
-.scene[data-focus="model"] .cube-top{border-color:var(--cyan);box-shadow:inset 0 0 42px rgba(181,215,216,.16)}
-.float-card strong{display:block;margin-top:4px;color:#e6ecef;font-size:12px;font-weight:550}
-.float-card small{display:block;margin-top:2px;color:#84939d;font:9px var(--mono)}
-.float-a{left:3%;top:26%;transform:translateZ(110px) rotateY(10deg) rotateZ(-5deg)}
-.float-b{right:0;top:35%;transform:translateZ(145px) rotateY(-12deg) rotateZ(4deg)}
-.float-c{left:18%;bottom:23%;transform:translateZ(95px) rotateY(8deg) rotateZ(3deg)}
-.float-b .num{color:var(--cyan)}
-.scene-cross{position:absolute;z-index:2;width:8px;height:8px;border:1px solid var(--orange);transform:translateZ(174px) rotate(45deg)}
-.cross-a{left:25%;top:17%}.cross-b{right:17%;bottom:20%;border-color:var(--cyan)}
-.spatial-note{position:absolute;right:11%;bottom:17px;color:#82929d;font:9px var(--mono);letter-spacing:.12em;text-align:right}
-@keyframes cube-turn{0%{transform:translate(-50%,-50%) rotateX(-23deg) rotateY(32deg)}100%{transform:translate(-50%,-50%) rotateX(337deg) rotateY(392deg)}}
-/* ============ TICKERS ============ */
-.ticker-wrap{position:relative;z-index:3;padding:30px 0 10px;overflow:hidden}
-.ticker{overflow:hidden;white-space:nowrap;border-block:2px solid var(--ink);background:var(--ink);color:var(--paper);padding:11px 0;width:106%;margin-left:-3%}
-.ticker.t2{background:var(--orange);color:var(--ink);border-color:var(--ink);margin-top:-6px;transform:rotate(.9deg)}
-.ticker.t1{transform:rotate(-1.1deg)}
-.ticker-track{display:inline-block;animation:slide 30s linear infinite;font:700 13px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase}
-.ticker.t2 .ticker-track{animation:slide-rev 26s linear infinite;font-family:var(--serif);letter-spacing:.3em}
-.ticker i{font-style:normal;color:var(--orange);margin:0 18px}
-.ticker.t2 i{color:var(--paper)}
+.hero-tag{position:absolute;right:-10px;top:-18px;z-index:3;background:var(--ink);color:var(--paper);font:700 11px var(--mono);letter-spacing:.14em;padding:8px 12px;transform:rotate(3deg)}
+.scroll-cue{position:absolute;left:50%;bottom:34px;transform:translateX(-50%);font:700 11px var(--mono);letter-spacing:.2em;color:var(--ink-soft);display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-cue::after{content:"";width:2px;height:34px;background:linear-gradient(var(--ink),transparent);animation:cue 1.8s var(--ease) infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@media (min-width:1000px) and (min-height:700px){
+  .hero-stage{height:calc(100vh + 380px)}
+  .hero{position:sticky;top:0;height:100vh}
+}
+
+/* ticker */
+.ticker{border-block:2px solid var(--ink);background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap}
+.ticker-track{display:inline-flex;gap:40px;padding:15px 0;animation:slide 36s linear infinite;font:900 clamp(18px,2.2vw,26px) var(--serif);letter-spacing:.12em}
+.ticker-track span{display:inline-flex;align-items:center;gap:40px}
+.ticker-track span::after{content:"✳";color:var(--orange);font-size:.8em}
 @keyframes slide{to{transform:translateX(-50%)}}
-@keyframes slide-rev{from{transform:translateX(-50%)}to{transform:translateX(0)}}
-/* ============ MAIN ============ */
-main{position:relative}
-.section{padding:104px 0 24px;position:relative}
-.ghost{position:absolute;top:36px;right:-6px;font:900 clamp(110px,17vw,240px)/1 var(--serif);color:transparent;-webkit-text-stroke:2px rgba(23,20,15,.12);pointer-events:none;user-select:none;z-index:0}
-.section-head{display:grid;grid-template-columns:150px minmax(0,1fr);gap:28px;align-items:start;margin-bottom:44px;position:relative;z-index:1}
-.section-index{padding-top:14px;color:var(--ink-faint);font:10px var(--mono);letter-spacing:.13em}
-.section-index b{display:inline-block;margin-right:12px;color:var(--orange);font-weight:600}
-h2{margin:0;font:900 clamp(30px,4.4vw,52px)/1.24 var(--serif);letter-spacing:.02em;text-wrap:pretty}
-.section-lede{max-width:640px;margin:14px 0 0;color:var(--ink-soft);font-size:15px;line-height:1.85}
-.section-kicker{margin:0 0 10px;color:var(--ink-faint);font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase}
-.rootline{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:60px;align-items:center;padding:36px 0 44px;border-block:2px solid var(--ink);position:relative;z-index:1}
-.rootline h3{max-width:480px;margin:0;font:900 clamp(24px,3.4vw,38px)/1.4 var(--serif);letter-spacing:.02em}
-.rootline h3 em{font-style:normal;color:var(--orange)}
-.flow{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:4px;color:var(--ink);font:700 11px var(--mono);letter-spacing:.06em}
-.flow span{padding:9px 12px;border:1.5px solid var(--ink);background:var(--paper-2)}
-.flow i{color:var(--orange);font-style:normal;font-weight:700}
-/* ============ PROJECTS: paper cards with hard shadows ============ */
-.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
-.project{position:relative;min-width:0;min-height:430px;padding:28px 30px 26px;overflow:visible;background:var(--paper-2);border:2px solid var(--ink);box-shadow:7px 7px 0 var(--ink);transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
-.project:hover{transform:translate(-4px,-4px);box-shadow:12px 12px 0 var(--orange)}
-.project-head{position:relative;display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px dashed var(--line)}
-.project-code{color:var(--ink-faint);font:10px var(--mono);letter-spacing:.12em}
-.stamp-badge{position:absolute;top:14px;right:-10px;transform:rotate(7deg);padding:5px 11px;border:2px solid var(--orange);color:var(--orange);background:var(--paper);font:800 10px var(--mono);letter-spacing:.14em;box-shadow:3px 3px 0 rgba(23,20,15,.85)}
-.project.toc-project .stamp-badge{border-color:var(--blue);color:var(--blue)}
-.project-logo{position:relative;margin-top:34px;font:11px var(--mono);letter-spacing:.18em;color:var(--ink-faint);text-transform:uppercase}
-.project h3{position:relative;margin:8px 0 0;font:900 clamp(34px,3.4vw,44px)/1.15 var(--serif);letter-spacing:.02em}
-.project .project-tagline{position:relative;margin:8px 0 16px;color:var(--orange);font:700 13.5px/1.6 var(--serif);letter-spacing:.02em}
-.project p{position:relative;max-width:520px;margin:0;color:var(--ink-soft);font-size:13px;line-height:1.85}
-.project-process{position:relative;display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:20px;padding-top:16px;border-top:1px dashed var(--line);color:var(--ink-soft);font:9px var(--mono)}
-.project-process span{padding:6px 8px;border:1px solid var(--line);background:var(--paper)}
-.project-process i{color:var(--orange);font-style:normal}
-.project-link{position:relative;display:inline-flex;align-items:center;min-height:44px;margin-top:14px;color:var(--ink);font:700 12px var(--mono);letter-spacing:.06em;border-bottom:2px solid var(--orange);transition:color .2s}
-.project-link span{margin-left:9px;color:var(--orange);font:14px var(--mono);transition:transform .2s}
-.project-link:hover{color:var(--orange)}
-.project-link:hover span{transform:translate(3px,-3px)}
-.project-boundary{position:relative;margin-top:14px!important;padding:8px 12px;border-left:3px solid var(--blue);background:rgba(51,80,107,.07);color:var(--ink-soft)!important;font-size:11px!important}
-.case-more{position:relative;margin-top:14px;border-top:1px dashed var(--line)}
-.case-more summary{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:46px;cursor:pointer;list-style:none;color:var(--ink);font:700 10.5px var(--mono);letter-spacing:.06em}
-.case-more summary::-webkit-details-marker{display:none}
-.case-more summary::after{content:"+";color:var(--orange);font:18px var(--mono)}
-.case-more[open] summary::after{content:"−"}
-.case-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px 22px;padding:4px 0 16px}
-.case-detail-grid h4{margin:0;color:var(--orange);font:10px var(--mono);letter-spacing:.1em}
-.case-detail-grid p{margin:4px 0 0;color:var(--ink-soft);font-size:11px;line-height:1.75}
-.project.toc-project{grid-column:1/-1;min-height:0}
-/* ============ METHOD: photo prints on a dark desk ============ */
-.method-section{background:var(--deep);color:#f2f4f4;margin:56px 0 0;padding:96px 0 72px;position:relative;overflow:hidden}
-.method-section::before{content:"看系统 · 看条件 · 看自己";position:absolute;top:120px;right:1.2%;writing-mode:vertical-rl;font:11px var(--mono);letter-spacing:.5em;color:rgba(242,237,227,.3)}
-.method-section::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(181,215,216,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(181,215,216,.05) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse at 20% 10%,#000,transparent 60%);pointer-events:none}
-.method-section .wrap{position:relative;z-index:1}
-.method-section .section-index{color:#8d9aa2}
-.method-section .section-lede{color:#a8b3ba}
-.method-section h2{color:#f2f4f4}
-.visual-band{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px;margin:14px 0 34px}
-.visual-card{position:relative;background:#f5f1e8;padding:12px 12px 52px;border:1px solid rgba(0,0,0,.35);box-shadow:10px 14px 30px rgba(0,0,0,.45);transform:rotate(-1.6deg);transition:transform .35s var(--ease);margin:0}
-.visual-card:nth-child(2){transform:rotate(1.2deg)}
-.visual-card:nth-child(3){transform:rotate(-.6deg)}
-.visual-card:hover{transform:rotate(0) translateY(-6px)}
-.visual-card::before{content:"";position:absolute;top:-12px;left:50%;transform:translateX(-50%) rotate(-3deg);width:92px;height:24px;background:rgba(232,98,44,.5);box-shadow:0 2px 6px rgba(0,0,0,.25)}
-.visual-card .ph{display:block;overflow:hidden}
-.visual-card img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;transform:translateY(var(--py,0)) scale(1.1);will-change:transform}
-.visual-caption{position:absolute;left:14px;right:14px;bottom:10px;color:var(--ink)}
-.visual-caption strong{display:block;font:900 16.5px/1.4 var(--serif);letter-spacing:.02em}
-.visual-caption span{display:block;margin-top:3px;color:var(--ink-soft);font:10.5px/1.6 var(--mono);letter-spacing:.04em}
-/* convergence strip */
-.converge{position:relative;background:var(--orange);color:var(--ink);border:2px solid var(--ink);box-shadow:7px 7px 0 rgba(0,0,0,.55);padding:18px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 26px}
-.converge .c-label{color:var(--paper);background:var(--ink);padding:4px 10px;font:700 10px var(--mono);letter-spacing:.16em}
-.converge .c-point{font:700 14px var(--serif);letter-spacing:.03em}
-.converge .c-point::before{content:"※";margin-right:10px;font-size:11px;opacity:.7}
-.converge em{font-style:normal;margin-left:auto;font:700 12.5px/1.6 var(--mono);letter-spacing:.02em;color:var(--paper);background:rgba(23,20,15,.85);padding:6px 10px}
-/* TOC path & five steps */
-.toc-lower{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:34px;margin-top:38px}
-.toc-lower h3{margin:0 0 14px;font:900 18px var(--serif);letter-spacing:.02em;color:#f2f4f4}
-.toc-path-heading{margin:0 0 12px;color:#8d9aa2;font:10px var(--mono);letter-spacing:.12em}
-.focus-steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
-.focus-step{min-height:106px;padding:12px 9px;border:1.5px solid rgba(242,237,227,.35);background:rgba(242,237,227,.05);transition:background .25s,border-color .25s}
-.focus-step:hover{background:rgba(232,98,44,.12);border-color:var(--orange)}
-.focus-step b{display:block;color:var(--orange);font:9px var(--mono)}
-.focus-step span{display:block;margin-top:7px;color:#e6ecef;font:700 11px/1.5 var(--serif)}
-.toc-path{border-block:1px solid rgba(242,237,227,.35)}
-.toc-stage{position:relative;min-height:140px;padding:18px 14px 16px 0;opacity:.45;transition:opacity .45s var(--ease)}
-.toc-stage+.toc-stage{padding-left:14px;border-left:1px solid rgba(242,237,227,.25)}
-.toc-stage.is-active{opacity:1}
-.toc-stage .stage-no{color:var(--orange);font:10px var(--mono)}
-.toc-stage h3{margin:8px 0 5px;font:900 14.5px var(--serif);color:#f2f4f4}
-.toc-stage p{margin:0;color:#a8b3ba;font-size:11.5px;line-height:1.75}
-.theory-tools{border-top:1px solid rgba(242,237,227,.35)}
-.theory-tools summary{min-height:46px;display:flex;align-items:center;justify-content:space-between;gap:10px;cursor:pointer;list-style:none;color:#cdc5b4;font:10.5px var(--mono);letter-spacing:.08em}
-.theory-tools summary::-webkit-details-marker{display:none}
-.theory-tools summary::after{content:"+";color:var(--orange);font-size:17px}
-.theory-tools[open] summary::after{content:"−"}
-.theory-tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;padding:6px 0 16px}
-.theory-tool-grid p{margin:0;color:#a8b3ba;font-size:11px;line-height:1.8}
-.theory-tool-grid strong{color:#f2f4f4}
-.theory-note{margin:24px 0 0;padding:12px 16px;border:1px dashed rgba(242,237,227,.4);color:#a8b3ba;font-size:11.5px;line-height:1.8}
-/* ============ FIELDS: index list with hover invert ============ */
-.serve-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;margin-top:8px}
-/* GEO 入口条 */
-.geo-band{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;margin:30px 0 6px;padding:22px 24px;background:var(--ink);color:var(--paper);border-left:5px solid var(--orange);transition:transform .3s var(--ease)}
-.geo-band:hover{transform:translateX(4px)}
-.geo-band .gb-k{font:10px/1.5 var(--mono);letter-spacing:.18em;color:var(--orange);display:block;margin-bottom:8px}
-.geo-band .gb-t{font-family:var(--serif);font-size:clamp(19px,2.6vw,25px);font-weight:700;line-height:1.45;margin:0}
-.geo-band .gb-d{font-size:13.5px;line-height:1.75;color:#cdc5b4;margin:8px 0 0;max-width:52ch}
-.geo-band .gb-go{flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border:1.5px solid var(--orange);color:var(--paper);font:12px var(--mono);letter-spacing:.08em}
-.geo-band:hover .gb-go{background:var(--orange)}
-@media(max-width:640px){.geo-band{padding:18px 18px}.geo-band .gb-go{width:100%;justify-content:center}}
-.serve-card{min-height:0}
-.serve-card h3{font-size:clamp(24px,2.4vw,30px)!important}
-.serve-output{margin-top:26px;padding:18px 24px;border:2px solid var(--ink);background:var(--paper-2);box-shadow:6px 6px 0 var(--ink);display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px}
-.serve-output .so-label{padding:4px 10px;background:var(--ink);color:var(--paper);font:700 10px var(--mono);letter-spacing:.14em}
-.serve-output .so-item{font:700 13px/1.7 var(--serif);letter-spacing:.02em;display:inline-block}
-.serve-output .so-item i{font-style:normal;color:var(--orange);font:10px var(--mono);display:block;letter-spacing:.06em;margin-top:2px}
-.serve-note{margin:18px 0 44px;color:var(--ink-soft);font-size:12.5px;line-height:1.85;max-width:760px}
-.serve-note strong{color:var(--ink)}
-.serve-why{padding:30px 0 34px}
-.serve-why .rootline-copy p{margin:0 0 14px;color:var(--ink-soft);font-size:13.5px;line-height:1.9;max-width:560px}
-.scene-list{border-top:2px solid var(--ink)}
-.scene-row{position:relative;display:grid;grid-template-columns:110px minmax(0,1fr) 40px;gap:20px;align-items:baseline;padding:26px 14px;border-bottom:2px solid var(--ink);transition:background .25s,color .25s;cursor:default}
-.scene-row:hover{background:var(--ink);color:var(--paper)}
-.scene-row:hover p{color:#cdc5b4}
-.scene-row:hover small{color:#8d9aa2}
-.scene-row:hover .row-arrow{color:var(--orange);transform:translate(4px,-4px)}
-.scene-num{color:var(--orange);font:700 11px var(--mono);letter-spacing:.1em}
-.scene-row h3{margin:0;font:900 clamp(19px,2.2vw,25px)/1.3 var(--serif);letter-spacing:.02em}
-.scene-row p{margin:8px 0 0;color:var(--ink-soft);font-size:12.5px;line-height:1.8;max-width:560px}
-.scene-row small{display:block;margin-top:10px;color:var(--ink-faint);font:9px/1.6 var(--mono);letter-spacing:.06em}
-.row-arrow{align-self:center;color:var(--ink);font:22px var(--mono);transition:transform .25s,color .25s;justify-self:end}
-.notice{display:inline-flex;align-items:center;gap:9px;margin:0 0 20px;padding:8px 12px;border:1.5px dashed var(--ink);color:var(--ink-soft);font:10px var(--mono);letter-spacing:.06em}
-.notice::before{content:"";width:8px;height:8px;background:var(--orange);transform:rotate(45deg)}
-/* ============ METHOD BAND (how i work) ============ */
-.method-band{background:var(--paper-2);border-block:2px solid var(--ink);padding:76px 0 66px;margin:84px 0 0;position:relative}
-.method-band .section-index{color:var(--ink-faint)}
-.method-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
-.method-step{position:relative;padding:24px 22px;border:2px solid var(--ink);background:var(--paper);box-shadow:6px 6px 0 var(--ink);transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
-.method-step:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--orange)}
-.method-step:nth-child(2){transform:rotate(.8deg)}
-.method-step:nth-child(1){transform:rotate(-.7deg)}
-.method-step:hover{transform:rotate(0) translate(-3px,-3px)}
-.method-step .step-no{color:var(--orange);font:700 11px var(--mono)}
-.method-step h3{margin:12px 0 8px;font:900 20px var(--serif);letter-spacing:.02em}
-.method-step p{margin:0;color:var(--ink-soft);font-size:12.5px;line-height:1.8}
-.method-foot{margin:22px 0 0;color:var(--ink-faint);font:10px var(--mono);letter-spacing:.06em}
-/* ============ TIMELINE with dot leaders ============ */
-.timeline{border-top:2px solid var(--ink)}
-.timeline-item{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;padding:20px 0;border-bottom:1px dashed var(--line)}
-.tl-top{display:flex;align-items:baseline;gap:14px}
-.tl-year{color:var(--orange);font:800 13px var(--mono);letter-spacing:.06em;white-space:nowrap}
-.tl-title{font:900 19px var(--serif);letter-spacing:.02em}
-.tl-dots{flex:1;border-bottom:2px dotted #b9b0a2;transform:translateY(-5px)}
-.timeline-item p{margin:2px 0 0 0;color:var(--ink-soft);font-size:12.5px;line-height:1.75;max-width:640px}
-.resume-note{margin:14px 0 0;color:var(--ink-faint);font-size:10px}
-/* ============ WRITING ============ */
-.writing-list{border-top:2px solid var(--ink)}
-.article{display:grid;grid-template-columns:70px minmax(0,1fr) 46px;gap:20px;align-items:center;padding:26px 14px;border-bottom:2px solid var(--ink);transition:background .25s}
-.article:hover{background:var(--paper-2)}
-.article-no{color:var(--orange);font:700 12px var(--mono);letter-spacing:.08em}
-.article h3{margin:0;font:900 clamp(17px,2vw,21px)/1.5 var(--serif);letter-spacing:.02em}
-.article p{margin:4px 0 0;color:var(--ink-faint);font:10.5px var(--mono);letter-spacing:.08em}
-.article-arrow{color:var(--orange);font:24px var(--mono);transition:transform .25s;justify-self:end}
-.article:hover .article-arrow{transform:translate(4px,-4px)}
-/* ============ CONTACT ============ */
-.contact{padding-bottom:96px}
-.contact-panel{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:30px;align-items:center;padding:40px 36px;border:2px solid var(--ink);background:var(--paper-2);box-shadow:9px 9px 0 var(--orange);overflow:visible}
-.contact-panel::after{content:"✳";position:absolute;right:26px;top:-24px;color:var(--orange);font:44px/1 var(--serif);transform:rotate(14deg)}
-.contact-copy h3{max-width:640px;margin:0;font:900 clamp(26px,3.6vw,42px)/1.32 var(--serif);letter-spacing:.02em}
-.contact-copy p{max-width:600px;margin:12px 0 0;color:var(--ink-soft);font-size:13px}
-.contact-links{position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start;gap:8px}
-.contact-links a,.contact-links button,.contact-detail{display:inline-flex;align-items:center;min-height:46px;padding:0 14px;border:1.5px solid var(--ink);font:700 10.5px var(--mono);letter-spacing:.06em;transition:border-color .2s,background .2s,box-shadow .2s;color:inherit;background:var(--paper);cursor:pointer;box-shadow:3px 3px 0 var(--ink)}
-.contact-links a:hover,.contact-links button:hover{background:var(--orange);color:var(--ink);border-color:var(--ink)}
-.contact-links button.copied{background:var(--ink);color:var(--paper)}
-.contact-detail{gap:8px;color:var(--ink-soft);background:transparent;box-shadow:none;border-style:dashed}
-.contact-detail strong{color:var(--ink);font-weight:800}
-/* ============ FOOTER ============ */
-.footer{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:26px 0 36px;border-top:2px solid var(--ink);color:var(--ink-soft);font:10px/1.8 var(--mono);letter-spacing:.06em}
-.footer-main{display:flex;flex-direction:column;gap:4px}
-.footer-main strong{font:900 14px var(--serif);letter-spacing:.06em;color:var(--ink)}
-/* Entrance */
-.js-ready .rise{opacity:0;transform:translateY(26px) rotate(var(--r,0deg)) scale(.985);transition:opacity .75s var(--ease),transform .75s var(--ease);transition-delay:var(--d,0s)}
-.js-ready .rise.is-in{opacity:1;transform:rotate(var(--r,0deg))}
-@media(max-width:920px){
-  .hero-grid{grid-template-columns:minmax(0,1fr) minmax(330px,.9fr);gap:0}
-  .spatial{height:440px;transform:scale(.92);transform-origin:center}
-  .float-a{left:-1%}.float-b{right:-4%}
-  .section-head{grid-template-columns:110px minmax(0,1fr);gap:20px}
-  .visual-band{grid-template-columns:1fr 1fr;gap:22px}
-  .visual-card:nth-child(3){grid-column:1/-1;max-width:70%;margin-inline:auto}
-  .method-step:nth-child(1),.method-step:nth-child(2){transform:none}
+
+/* scenes */
+.scn-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,2.4vw,30px)}
+.scn{background:var(--paper-2);border:2px solid var(--ink);display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.scn:hover{transform:translate(-4px,-4px);box-shadow:8px 8px 0 var(--ink)}
+.scn figure{margin:0;overflow:hidden;border-bottom:2px solid var(--ink)}
+.scn img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .8s var(--ease)}
+.scn:hover img{transform:scale(1.05)}
+.scn-body{padding:22px 22px 26px;display:grid;gap:12px}
+.scn-no{font:700 11px var(--mono);letter-spacing:.16em;color:var(--ink-faint)}
+.scn h3{font-size:24px;font-weight:900}
+.scn p{margin:0;font-size:15px;line-height:1.7;color:var(--ink-soft)}
+.scn p b{display:inline-block;font:700 11px var(--mono);letter-spacing:.1em;color:var(--paper);background:var(--ink);padding:1px 7px;margin-right:8px;vertical-align:2px}
+.scn p.fix b{background:var(--orange-deep)}
+.scn-close{margin:clamp(36px,5vw,56px) 0 0;font:900 clamp(22px,2.8vw,34px)/1.4 var(--serif);text-align:center}
+.scn-close em{font-style:normal;background:linear-gradient(transparent 62%,rgba(232,98,44,.45) 62%)}
+
+/* AI band */
+.on-ink{background:var(--ink);color:var(--paper)}
+.ai-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(30px,5vw,70px);align-items:center}
+.ai-art .print{border-color:var(--paper);box-shadow:12px 12px 0 var(--orange);transform:rotate(-1.2deg)}
+.ai-art img{aspect-ratio:3/2}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;background:#3a342b;border:2px solid #3a342b;margin-top:34px}
+.stat{background:var(--ink);padding:22px 20px}
+.stat .num{font:900 clamp(32px,3.6vw,46px)/1 var(--serif);color:var(--orange);display:block;font-variant-numeric:tabular-nums}
+.stat .num small{font-size:.45em;margin-left:4px;color:var(--paper)}
+.stat p{margin:10px 0 0;font-size:14px;line-height:1.6;color:#d8cfbd}
+.ai-note{margin:22px 0 0;font:700 14px var(--mono);letter-spacing:.06em;color:#a9a08f}
+
+/* works */
+.works{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.work{border:2px solid var(--ink);background:var(--paper-2);padding:24px 22px 22px;display:flex;flex-direction:column;gap:12px;min-height:250px;position:relative;transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .25s}
+.work:hover{transform:translate(-4px,-4px);box-shadow:8px 8px 0 var(--orange)}
+.work-top{display:flex;justify-content:space-between;align-items:center;font:700 11px var(--mono);letter-spacing:.14em;color:var(--ink-faint)}
+.chip{font:700 10.5px var(--mono);letter-spacing:.1em;padding:3px 8px;border:1.5px solid currentColor}
+.chip.live{color:#2f6b3f}.chip.live::before{content:"● ";animation:blink 2s infinite}
+.chip.proto{color:var(--ink-faint)}
+@keyframes blink{50%{opacity:.25}}
+.work h3{font-size:26px;font-weight:900}
+.work p{margin:0;font-size:15px;color:var(--ink-soft);flex:1}
+.work .go{font:700 13px var(--mono);letter-spacing:.06em;display:inline-flex;gap:6px;align-items:center;min-height:36px}
+.work .go span{transition:transform .25s var(--spring)}
+.work:hover .go span{transform:translate(3px,-3px)}
+.works{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)!important;align-items:stretch}
+.work.feat{padding:0;min-height:0;gap:0}
+.work.feat figure{margin:0;border:0;border-bottom:2px solid var(--ink);box-shadow:none;overflow:hidden}
+.work.feat figure img{aspect-ratio:16/10;object-fit:cover;object-position:top;transition:transform .8s var(--ease)}
+.work.feat:hover figure img{transform:scale(1.03)}
+.feat-body{padding:22px 24px 22px;display:flex;flex-direction:column;gap:10px}
+.work-list{display:grid;gap:14px}
+.work.row{min-height:0;padding:18px 20px;gap:6px}
+.work.row h3{font-size:21px}
+@media (max-width:900px){.works{grid-template-columns:minmax(0,1fr)!important}}
+.works-foot{margin:22px 0 0;font-size:14px;color:var(--ink-faint)}
+
+/* services */
+.svc-band{background:var(--paper-3);border-block:2px solid var(--ink)}
+.svcs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px}
+.svc{grid-column:span 2;background:var(--paper-2);border:2px solid var(--ink);padding:26px 24px;display:flex;flex-direction:column;gap:14px;position:relative;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.svc:hover{transform:translate(-4px,-4px);box-shadow:8px 8px 0 var(--ink)}
+.svc.lead{grid-column:span 3;background:var(--ink);color:var(--paper)}
+.svc.lead:hover{box-shadow:8px 8px 0 var(--orange)}
+.svc.tool{grid-column:span 3;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:20px;align-items:center}
+.svc.tool figure{margin:0;border:2px solid var(--ink);overflow:hidden}
+.svc.tool img{aspect-ratio:4/3;object-fit:cover}
+.svc-no{font:700 11px var(--mono);letter-spacing:.16em;color:var(--ink-faint)}
+.svc.lead .svc-no{color:#a9a08f}
+.svc h3{font-size:clamp(22px,2vw,27px);font-weight:900;line-height:1.3}
+.svc dl{margin:0;display:grid;gap:10px}
+.svc dl div{display:grid;grid-template-columns:4.6em minmax(0,1fr);gap:10px;align-items:baseline}
+.svc dt{font:700 11px var(--mono);letter-spacing:.08em;color:var(--orange-deep)}
+.svc.lead dt{color:var(--orange)}
+.svc dd{margin:0;font-size:15px;line-height:1.65}
+.svc.lead dd{color:#e6ddcb}
+.svc .first{margin-top:auto;padding-top:12px;border-top:1.5px dashed currentColor;font:700 14px var(--sans)}
+.svc .first a{text-decoration:underline;text-underline-offset:4px}
+.badge-soon{position:absolute;top:-14px;right:18px;background:var(--orange-deep);color:var(--paper);font:700 11px var(--mono);letter-spacing:.14em;padding:6px 10px;transform:rotate(2deg)}
+.faq{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:clamp(40px,5vw,60px)}
+.qa{border-top:3px solid var(--ink);padding-top:18px}
+.qa h3{font-size:21px;font-weight:900}
+.qa h3::before{content:"问 ";color:var(--orange-deep)}
+.qa p{margin:10px 0 0;font-size:15.5px;color:var(--ink-soft);max-width:30em}
+
+/* three days */
+.days{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:var(--ink);border:2px solid var(--ink)}
+.day{background:var(--paper-2);position:relative;overflow:hidden}
+.day-big{display:block;padding:26px 22px 0;font:900 clamp(64px,7vw,96px)/1 var(--serif);color:transparent;-webkit-text-stroke:2px var(--ink);transition:color .35s var(--ease)}
+.day:hover .day-big{color:var(--orange-deep);-webkit-text-stroke-color:var(--orange-deep)}
+.day-body{border-top:0}
+.day-body{padding:20px 22px 24px}
+.day-no{font:700 11px var(--mono);letter-spacing:.16em;color:var(--orange-deep)}
+.day h3{font-size:22px;font-weight:900;margin-top:6px}
+.day p{margin:8px 0 0;font-size:14.5px;color:var(--ink-soft)}
+.days-out{margin:26px 0 0;display:flex;flex-wrap:wrap;gap:10px 26px;font:700 15px var(--sans)}
+.days-out span::before{content:"→ ";color:var(--orange-deep)}
+
+/* CV: pinned horizontal */
+.cv-stage{position:relative}
+.cv-sticky{position:relative}
+.cv-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.cv-edu{font-size:14px;color:var(--ink-soft);max-width:22em;border-left:3px solid var(--orange);padding-left:14px}
+.cv-edu b{color:var(--ink);font-family:var(--serif);font-size:16px}
+.cv-track{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:40px}
+.cv-item{border:2px solid var(--ink);background:var(--paper-2);padding:26px 24px;display:flex;flex-direction:column;gap:12px;position:relative}
+.cv-item::before{content:"";position:absolute;left:-2px;right:-2px;top:-2px;height:6px;background:var(--ink)}
+.cv-item.now::before,.cv-item.key::before{background:var(--orange)}
+.cv-item.key{background:var(--ink);color:var(--paper)}
+.cv-item.key .cv-role{color:#a9a08f}.cv-item.key p{color:#d8cfbd}.cv-item.key p b{color:var(--orange)}
+.cv-year{font:900 clamp(26px,2.6vw,34px)/1 var(--serif);font-variant-numeric:tabular-nums}
+.cv-role{font:700 12px var(--mono);letter-spacing:.1em;color:var(--ink-faint)}
+.cv-item h3{font-size:21px;font-weight:900;line-height:1.35}
+.cv-item p{margin:0;font-size:15px;color:var(--ink-soft)}
+.cv-item p b{color:var(--orange-deep);font:700 11px var(--mono);letter-spacing:.08em;margin-right:6px}
+.cv-bar{display:none}
+.cv-bar span{position:absolute;left:0;top:14px;font:700 11px var(--mono);letter-spacing:.14em;color:var(--ink-faint)}
+@media (min-width:1000px) and (min-height:640px){
+  .cv-pin .cv-stage{height:var(--cv-h,300vh)}
+  .cv-pin .cv-sticky{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding-top:40px}
+  .cv-pin .cv-track{display:flex;gap:22px;width:max-content;margin-top:40px;will-change:transform}
+  .cv-pin .cv-item{width:clamp(300px,27vw,370px);flex:none;min-height:330px}
+  .cv-pin .cv-bar{display:block;height:4px;background:var(--line);margin-top:30px;position:relative}
+  .cv-pin .cv-sticky{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 70px,#000 calc(100% - 70px),transparent);mask-image:linear-gradient(90deg,transparent 0,#000 70px,#000 calc(100% - 70px),transparent)}
+  .cv-pin .cv-bar i{position:absolute;inset:0;background:var(--orange);transform-origin:0 50%;transform:scaleX(var(--cvp,0))}
 }
-@media(max-width:850px){
-  .hero-grid{min-height:0;grid-template-columns:1fr;padding:48px 0 34px}
-  .hero-copy{max-width:720px}
-  .spatial{width:100%;max-width:620px;height:420px;margin:6px auto 0;transform:none}
-  .visual-band{grid-template-columns:1fr}
-  .visual-card:nth-child(3){grid-column:auto;max-width:none}
-  .toc-lower{grid-template-columns:1fr;gap:30px}
+
+/* writing + contact */
+.notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.note{border-top:3px solid var(--ink);padding:18px 0 4px;display:flex;flex-direction:column;gap:8px;transition:color .2s}
+.note:hover{color:var(--orange-deep)}
+.note small{font:700 11px var(--mono);letter-spacing:.14em;color:var(--ink-faint)}
+.note h3{font-size:19px;font-weight:900;line-height:1.45}
+.contact{padding:clamp(80px,10vw,130px) 0}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(30px,5vw,70px);align-items:end}
+.contact h2{font-size:clamp(34px,4.6vw,62px)}
+.contact h2 em{font-style:normal;color:var(--orange)}
+.ways{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:8px;font-size:16px;color:#d8cfbd}
+.ways li::before{content:"0" counter(w) "  ";counter-increment:w;font:700 12px var(--mono);color:var(--orange)}
+.ways{counter-reset:w}
+.links{display:grid;gap:2px;background:#3a342b;border:2px solid #3a342b}
+.link{display:flex;justify-content:space-between;align-items:center;gap:16px;background:var(--ink);padding:18px 20px;min-height:64px;border:0;width:100%;text-align:left;cursor:pointer;transition:background .2s}
+.link:hover{background:#221e17}
+.link .k{font:700 11px var(--mono);letter-spacing:.16em;color:#a9a08f;min-width:5.5em}
+.link .v{font:700 17px var(--mono);color:var(--paper);flex:1;letter-spacing:.02em}
+.link .a{font:700 12px var(--mono);color:var(--orange);letter-spacing:.08em;white-space:nowrap}
+.link.done .a{color:#7fc28f}
+.footer{border-top:2px solid #3a342b;padding:26px 0 34px;font:12px/1.8 var(--mono);letter-spacing:.06em;color:#a9a08f;background:var(--ink)}
+.footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px 30px}
+.footer a{text-decoration:underline;text-underline-offset:3px}
+
+/* entrance (gated) */
+.js-ready [data-in]{transition:opacity .9s var(--ease),translate .9s var(--ease),rotate .9s var(--ease),scale .9s var(--ease);transition-delay:var(--d,0s)}
+.js-ready [data-in]:not(.in){opacity:0}
+.js-ready [data-in="rise"]:not(.in){translate:0 46px}
+.js-ready [data-in="paper"]:not(.in){translate:0 36px;rotate:-2.5deg}
+.js-ready [data-in="slide"]:not(.in){translate:-50px 0}
+.js-ready [data-in="lift"]:not(.in){scale:.94;translate:0 24px}
+.js-ready h1 .ln i{transform:translateY(112%);transition:transform 1.1s var(--ease)}
+.js-ready h1 .ln:nth-child(2) i{transition-delay:.12s}
+.js-ready.is-loaded h1 .ln i{transform:none}
+.js-ready .hero-art{opacity:0;translate:40px 0;transition:opacity 1.1s var(--ease) .25s,translate 1.1s var(--ease) .25s}
+.js-ready.is-loaded .hero-art{opacity:1;translate:0 0}
+
+/* responsive */
+@media (max-width:1100px){
+  .works{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .svc,.svc.lead,.svc.tool{grid-column:span 3}
 }
-@media(max-width:720px){
-  .wrap,.hero-inner{width:calc(100% - 40px)}
-  .cursor-ring,.stamp,.hero-vert{display:none}
-  .floatnav nav{gap:12px}
-  .floatnav nav a[href="#fields"]{display:none}
-  .floatnav nav a{font-size:10px;white-space:nowrap}
-  .floatnav .fn-brand{white-space:nowrap;font-size:13px}
-  .floatnav .fn-brand i{display:none}
-  .hero{width:calc(100% - 16px);margin-top:8px;min-height:0;box-shadow:5px 5px 0 rgba(23,20,15,.9)}
-  .topbar{height:66px}
-  .nav{max-width:60%;gap:12px}
-  .nav a[href="#fields"]{display:none}
-  .nav a{font-size:10px;white-space:nowrap}
-  .nav .nav-cta{padding:0 10px}
-  .hero-grid{min-height:0;grid-template-columns:1fr;padding:50px 0 28px}
-  .hero-copy{padding:0}
-  .hero-copy .eyebrow{margin-bottom:20px;font-size:9px}
-  h1{font-size:clamp(33px,8.4vw,56px)}
-  .hero-role{margin-top:18px;font-size:13px}
-  .hero-copy .lede{font-size:13px;line-height:1.8}
-  .hero-actions{margin-top:22px}
-  .button{min-height:46px;padding:0 14px;font-size:11px}
-  .hero-tags{margin-top:20px;font-size:8px;gap:7px 13px}
-  .spatial{height:340px;margin-top:15px;transform:none}
-  .scene::before{width:300px;height:122px}
-  .scene::after{width:250px;height:100px}
-  .cube{width:148px;height:148px}
-  .cube-front{transform:translateZ(74px)}.cube-back{transform:rotateY(180deg) translateZ(74px)}
-  .cube-right{transform:rotateY(90deg) translateZ(74px)}.cube-left{transform:rotateY(-90deg) translateZ(74px)}
-  .cube-top{transform:rotateX(90deg) translateZ(74px)}.cube-bottom{transform:rotateX(-90deg) translateZ(74px)}
-  .cube-core{width:64px;height:64px;font-size:8px}
-  .float-card{min-width:112px;padding:9px 10px}
-  .float-card strong{font-size:10px}.float-card small{font-size:8px}
-  .float-a{left:5%;top:20%}.float-b{right:8%;top:36%}.float-c{left:10%;bottom:30%}
-  .spatial-label.top{top:0;font-size:9px}.spatial-label.bottom{display:none}.spatial-note{left:50%;right:auto;bottom:10px;transform:translateX(-50%);font-size:9px;text-align:center;white-space:nowrap}
-  .ticker-track{font-size:11px}
-  .section{padding-top:74px}
-  .ghost{top:14px;right:-2px;font-size:110px}
-  .section-head{grid-template-columns:1fr;gap:8px;margin-bottom:26px}
-  .section-index{padding-top:0}
-  h2{font-size:clamp(27px,7vw,40px)}
-  .section-lede{font-size:13px}
-  .rootline{grid-template-columns:1fr;gap:22px;padding:26px 0 30px}
-  .flow{gap:6px;font-size:9px}.flow span{padding:7px 9px}
-  .project-grid{grid-template-columns:1fr;gap:18px}
-  .project{min-height:0;padding:22px 20px 20px;box-shadow:5px 5px 0 var(--ink)}
-  .project h3{font-size:32px}
-  .project p{font-size:12px}
-  .project-process{font-size:8px}
-  .project.toc-project{grid-column:auto}
-  .stamp-badge{top:10px;right:-6px;font-size:9px}
-  .case-detail-grid{grid-template-columns:1fr;gap:10px}
-  .visual-card{padding:10px 10px 46px}
-  .visual-caption strong{font-size:14px}
-  .converge{padding:14px 16px;gap:8px 14px}
-  .converge em{margin-left:0}
-  .converge .c-point{font-size:12.5px}
-  .focus-steps{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .focus-step{min-height:72px}
-  .theory-tool-grid{grid-template-columns:1fr;gap:8px}
-  .method-section::before{display:none}
-  .scene-row{grid-template-columns:64px minmax(0,1fr);gap:12px;padding:20px 10px}
-  .row-arrow{display:none}
-  .scene-row h3{font-size:17px}.scene-row p{font-size:12px}
-  .method-band{margin-top:64px;padding:52px 0 50px}
-  .method-grid{grid-template-columns:1fr}
-  .method-step{transform:none!important}
-  .method-step h3{margin:8px 0;font-size:17px}
-  .serve-grid{grid-template-columns:1fr}
-  .serve-output{padding:14px 16px}
-  .rootline.serve-why{padding:22px 0 26px}
-  .serve-why .rootline-copy p{font-size:12.5px}
-  .timeline-item{padding:16px 0}
-  .tl-top{gap:10px}
-  .tl-year{font-size:10px}
-  .tl-title{font-size:16px}
-  .timeline-item p{font-size:11.5px}
-  .article{grid-template-columns:44px minmax(0,1fr) 26px;gap:12px;padding:18px 8px}
-  .article h3{font-size:15px}.article p{font-size:9px}
-  .contact{padding-bottom:64px}
-  .contact-panel{grid-template-columns:1fr;gap:22px;padding:26px 20px;box-shadow:6px 6px 0 var(--orange)}
-  .contact-copy h3{font-size:26px}.contact-copy p{font-size:12px}
-  .contact-links{flex-direction:row;flex-wrap:wrap}
-  .contact-links a,.contact-links button,.contact-detail{font-size:9px;padding:0 10px;box-shadow:2px 2px 0 var(--ink)}
-  .footer{align-items:flex-start;flex-direction:column;gap:10px;padding-bottom:26px}
+@media (max-width:900px){
+  .hero{padding-top:90px}
+  .hero-grid,.ai-grid,.contact-grid{grid-template-columns:minmax(0,1fr)}
+  .hero-art{max-width:560px}
+  .scn-grid,.days,.notes{grid-template-columns:minmax(0,1fr)}
+  .svcs{grid-template-columns:minmax(0,1fr)}
+  .svc,.svc.lead,.svc.tool{grid-column:auto}
+  .faq{grid-template-columns:minmax(0,1fr)}
+  .nav a:not(.nav-cta):not(.keep){display:none}
 }
-@media(max-width:360px){
-  .wrap,.hero-inner{width:calc(100% - 32px)}
-  .brand-name{font-size:13px}
-  .nav{max-width:60%;gap:10px}.nav a{font-size:9px}
-  h1{font-size:31px}
-  .spatial{height:315px}
-  .float-card{min-width:100px;padding:8px}
-  .float-card small{display:none}
-  .float-a{left:8%}.float-b{right:8%}.float-c{left:5%}
-  .flow span{font-size:8px;padding:6px}
+@media (max-width:640px){
+  .wrap{width:calc(100% - 36px)}
+  .works,.cv-track{grid-template-columns:minmax(0,1fr)}
+  .svc.tool{grid-template-columns:minmax(0,1fr)}
+  .stamp{width:96px;height:96px;left:-14px;bottom:-40px}
+  .stamp .core{inset:25px;font-size:12px}
+  .stamp text{font-size:9px}
+  .print{box-shadow:7px 7px 0 var(--ink)}
+  .ai-art .print{box-shadow:7px 7px 0 var(--orange)}
+  .hero-cta .btn{width:100%;justify-content:space-between}
+  .brand i{display:none}
+  h1{font-size:clamp(30px,9vw,38px)}
+  .nav{gap:16px}
+  .stamp{left:8px;bottom:-44px}
+  .stats{grid-template-columns:minmax(0,1fr)}
+  .hero-who{font-size:12.5px}
+  .link .v{font-size:15px}
+  .stat{padding:18px 16px}
+  .scroll-cue{display:none}
+  .svc dl div{grid-template-columns:minmax(0,1fr);gap:2px}
+  .svc.tool figure{max-width:260px}
+  .footer{padding-bottom:calc(34px + env(safe-area-inset-bottom))}
 }
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
-  .scene{transform:none!important}
-  .hero-copy{transform:none!important;opacity:1!important}
-  .visual-card img{transform:scale(1)!important}
-  .toc-stage{opacity:1!important}
-  .floatnav{transition:none}
-  .ticker-track{animation:none!important}
-  .stamp{animation:none!important}
-  .cursor-ring{display:none!important}
-  .js-ready .rise{opacity:1!important;transform:none!important}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .js-ready [data-in]{opacity:1!important;translate:none!important;rotate:none!important;scale:none!important}
+  .js-ready h1 .ln i{transform:none!important}
+  .js-ready .hero-art{opacity:1!important;translate:none!important}
 }
 </style>
 <!-- seo:jsonld:start -->
@@ -497,73 +342,58 @@ h2{margin:0;font:900 clamp(30px,4.4vw,52px)/1.24 var(--serif);letter-spacing:.02
    "@type": "Person",
    "@id": "https://unfog.cn/#person",
    "name": "解睿",
-   "alternateName": [
-    "脉动",
-    "Jerry",
-    "脉动无休"
-   ],
-   "jobTitle": "产品设计师（设计思维 × TOC × AI）",
-   "description": "用设计思维与 TOC 制约理论拆解生意与运营问题，从真实现场找到真约束，再亲手把解法做成能运行、能验证的 AI 产品与系统。",
+   "alternateName": ["脉动", "Jerry", "脉动无休"],
+   "jobTitle": "经营改善顾问 · 团队管理 · AI 产品实践",
+   "description": "带过施工现场、门店运营和研发团队，用 AI 干活。长期处理同一件事：把只有某个人会的事，变成别人也能照着做的事。独立设计开发并上线生意说、住明白、有一套。",
    "url": "https://unfog.cn/",
    "image": "https://unfog.cn/assets/logo-master.png",
    "email": "mailto:xie1701@gmail.com",
    "telephone": "+86-16675610571",
-   "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "珠海",
-    "addressRegion": "广东",
-    "addressCountry": "CN"
-   },
-   "knowsAbout": [
-    "设计思维",
-    "产品设计",
-    "TOC 制约理论",
-    "AI 产品实践",
-    "本地商家线上内容共建",
-    "短视频与图文内容策划",
-    "生成式引擎优化（GEO）",
-    "AI 搜索优化",
-    "AI 可见度诊断"
-   ],
-   "sameAs": [
-    "https://github.com/xie1701",
-    "https://panorover.com/U/wx_8469d7bc"
-   ]
+   "address": {"@type": "PostalAddress", "addressLocality": "珠海", "addressRegion": "广东", "addressCountry": "CN"},
+   "alumniOf": {"@type": "CollegeOrUniversity", "name": "四川农业大学"},
+   "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "工学学士", "about": "木材科学与工程"},
+   "knowsAbout": ["团队管理与带人", "经营诊断与流程改善", "TOC 制约理论", "设计思维", "AI 产品设计与开发", "AI 辅助工作流", "本地商家线上内容共建", "生成式引擎优化（GEO）", "AI 可见度诊断", "家装与建材行业运营"],
+   "worksFor": {"@id": "https://unfog.cn/#org"},
+   "sameAs": ["https://github.com/xie1701", "https://panorover.com/U/wx_8469d7bc"]
   },
   {
    "@type": "WebSite",
    "@id": "https://unfog.cn/#website",
    "url": "https://unfog.cn/",
-   "name": "脉动无休｜脉动（解睿）的个人网站",
+   "name": "脉动无休｜解睿（脉动无休 / Jerry）的个人网站",
    "inLanguage": "zh-CN",
-   "publisher": {
-    "@id": "https://unfog.cn/#person"
-   }
+   "publisher": {"@id": "https://unfog.cn/#person"}
+  },
+  {
+   "@type": "Organization",
+   "@id": "https://unfog.cn/#org",
+   "name": "无休科技（珠海）有限公司",
+   "legalName": "无休科技（珠海）有限公司",
+   "url": "https://unfog.cn/",
+   "description": "无休科技（珠海）有限公司是解睿（脉动无休 / Jerry）对外提供经营改善顾问、线上内容共建、GEO 生成式引擎优化与 AI 产品服务的经营主体，注册地广东珠海。",
+   "founder": {"@id": "https://unfog.cn/#person"},
+   "address": {"@type": "PostalAddress", "addressLocality": "珠海", "addressRegion": "广东", "addressCountry": "CN"},
+   "sameAs": ["https://www.tianyancha.com/company/8131203672"]
   },
   {
    "@type": "Service",
+   "@id": "https://unfog.cn/#svc-advisor",
+   "name": "经营顾问：把只有老板会干的事拆出来",
+   "serviceType": "小微企业经营改善顾问",
+   "provider": {"@id": "https://unfog.cn/#person"},
+   "areaServed": [{"@type": "City", "name": "珠海"}, {"@type": "Country", "name": "中国（远程）"}],
+   "description": "四到六周，让店里一件原来只有老板会干的事，别人也能照着做。投入逐步减少：头两周密集，之后每周半天，再之后每月一次。不碰销售，不承诺业绩，不动现有分工。第一步先挑一件事，按一个月算。",
+   "offers": {"@type": "Offer", "priceCurrency": "CNY", "description": "按月合作，费用通过微信沟通。", "availability": "https://schema.org/InStock"}
+  },
+  {
+   "@type": "Service",
+   "@id": "https://unfog.cn/#svc-content",
    "name": "本地商家线上内容共建",
    "serviceType": "线上内容策划与共建",
-   "provider": {
-    "@id": "https://unfog.cn/#person"
-   },
-   "areaServed": [
-    {
-     "@type": "City",
-     "name": "珠海"
-    },
-    {
-     "@type": "Country",
-     "name": "中国（远程）"
-    }
-   ],
-   "description": "把店里多年做对的事，做成客户信得过、AI 也收录的线上内容。每周 1 条短视频 + 1 篇小红书图文 + 1 篇深度文章，每月四套；首月产出《门店表达底稿》。不承诺爆款、粉丝数、询盘量、成交额。",
-   "offers": {
-    "@type": "Offer",
-    "priceCurrency": "CNY",
-    "description": "费用与合作方式请通过页脚的邮箱或微信联系。",
-    "availability": "https://schema.org/InStock"
-   }
+   "provider": {"@id": "https://unfog.cn/#person"},
+   "areaServed": [{"@type": "City", "name": "珠海"}, {"@type": "Country", "name": "中国（远程）"}],
+   "description": "把店里多年做对的事，做成客户信得过、AI 也收录的线上内容。每周 1 条短视频、1 篇小红书图文、1 篇深度文章；首月产出《门店表达底稿》。两种做法：线上深聊，或每月上门拍摄。账号归店主，不承诺爆款与询盘。",
+   "offers": {"@type": "Offer", "priceCurrency": "CNY", "description": "费用通过微信沟通。", "availability": "https://schema.org/InStock"}
   },
   {
    "@type": "Service",
@@ -571,413 +401,350 @@ h2{margin:0;font:900 clamp(30px,4.4vw,52px)/1.24 var(--serif);letter-spacing:.02
    "name": "GEO 生成式引擎优化（AI 可见度诊断）",
    "serviceType": "生成式引擎优化",
    "url": "https://unfog.cn/geo/",
-   "provider": {
-    "@id": "https://unfog.cn/#person"
-   },
-   "areaServed": [
-    {
-     "@type": "City",
-     "name": "珠海"
-    },
-    {
-     "@type": "Country",
-     "name": "中国（远程）"
-    }
-   ],
-   "description": "GEO（生成式引擎优化）是让一家店、一个名字、一件事出现在 AI 回答客户问题的那一个句子里。做法三步：实体消歧、内容改成可被整段引用、拿到独立于自己的第三方来源。不承诺 AI 排名，只承诺 AI 说得清、说得对。",
-   "offers": {
-    "@type": "Offer",
-    "priceCurrency": "CNY",
-    "description": "先做一次 AI 可见度诊断，再定合作方式。",
-    "availability": "https://schema.org/InStock"
-   }
-  }
+   "provider": {"@id": "https://unfog.cn/#person"},
+   "areaServed": [{"@type": "City", "name": "珠海"}, {"@type": "Country", "name": "中国（远程）"}],
+   "description": "GEO（生成式引擎优化）是让一家店、一个名字、一件事出现在 AI 回答客户问题的那一个句子里。做法三步：实体消歧、内容改成可被整段引用、拿到独立于自己的第三方来源。不承诺 AI 排名，只承诺 AI 说得清你是谁。",
+   "offers": {"@type": "Offer", "priceCurrency": "CNY", "description": "先做一次 AI 可见度诊断，再定合作方式。", "availability": "https://schema.org/InStock"}
+  },
+  {
+   "@type": "SoftwareApplication",
+   "@id": "https://unfog.cn/#app-improve",
+   "name": "小微企业 AI 改善工具（即将上线）",
+   "applicationCategory": "BusinessApplication",
+   "operatingSystem": "Web",
+   "author": {"@id": "https://unfog.cn/#person"},
+   "description": "老板对着它说一句话，它告诉你钱卡在哪一步、卡了多久。不用填表，没有考核；基于 TOC 制约理论。"
+  },
+  {"@type": "SoftwareApplication", "name": "生意说", "url": "https://sy.unfog.cn/", "applicationCategory": "BusinessApplication", "operatingSystem": "Web, 微信", "author": {"@id": "https://unfog.cn/#person"}, "description": "把真实经营经验，变成客户信得过的营销内容。"},
+  {"@type": "SoftwareApplication", "name": "住明白", "url": "https://zmb.unfog.cn/", "applicationCategory": "LifestyleApplication", "operatingSystem": "Web, 微信", "author": {"@id": "https://unfog.cn/#person"}, "description": "装修见面前，用 AI 访谈先把真正要聊的事整理好。"},
+  {"@type": "SoftwareApplication", "name": "有一套", "url": "https://yyt.unfog.cn/", "applicationCategory": "BusinessApplication", "operatingSystem": "Web, 微信", "author": {"@id": "https://unfog.cn/#person"}, "description": "一场 AI 访谈，出一份量身定制的个人 IP 策划方案与行动手册。"}
  ]
 }
 </script>
 <!-- seo:jsonld:end -->
 </head>
 <body>
-<div class="progress" id="progress"></div>
-<div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
-<div class="floatnav" id="floatnav" aria-label="悬浮导航">
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<div class="floatnav" id="floatnav">
   <div class="wrap">
-    <span class="fn-brand"><img class="fn-logo" src="assets/logo-mark.png" alt="" aria-hidden="true" width="256" height="256">脉动无休<i>MAIDONG WUXIU</i></span>
-    <nav><a href="#projects">作品</a><a href="#toc">方法</a><a href="#fields">共建</a><a href="geo/">AI 可见度</a><a href="blog/">博客</a><a href="#contact" class="nav-cta">联系我 ↗</a></nav>
+    <a class="brand" href="#top"><img src="assets/logo-mark.png" alt="" width="256" height="256">脉动无休<i>MAIDONG WUXIU</i></a>
+    <nav class="nav" aria-label="页内导航"><a href="#scenes">现场</a><a href="#ai">AI</a><a href="#works">作品</a><a href="#services" class="keep">服务</a><a href="#cv">履历</a><a href="blog/">文章</a><a href="#contact" class="nav-cta">聊一聊</a></nav>
   </div>
 </div>
-<section class="hero" id="top" aria-labelledby="hero-title">
-  <div class="hero-inner">
-    <nav class="topbar" aria-label="主导航">
-      <a class="brand" href="#top" aria-label="脉动无休，返回首页">
-        <img class="brand-logo" src="assets/logo-mark.png" alt="" aria-hidden="true" width="256" height="256">
-        <span class="brand-name">脉动无休<small>MAIDONG WUXIU</small></span>
-      </a>
-      <div class="nav">
-        <a href="#projects">作品</a><a href="#toc">方法</a><a href="#fields">共建</a><a href="geo/">AI 可见度</a><a href="blog/">博客</a><a href="#contact" class="nav-cta">联系我 ↗</a>
-      </div>
-    </nav>
-    <p class="hero-vert" aria-hidden="true">脉動無休</p>
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow">DESIGN THINKING × TOC <b>／</b> AI PRODUCT BUILDER</p>
-        <h1 id="hero-title"><span>拆解生意的约束，</span><span>做成<span class="accent">能跑的产品。</span></span></h1>
-        <p class="hero-role">脉动无休（解睿 / Jerry）｜产品设计师 · TOC 实践者 · 技术极客 · AI 产品实践者</p>
-        <p class="lede">从现场找到真约束，用 AI 与软件做成能运行、能验证的产品。</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#projects">看我做过什么 <span aria-hidden="true">↘</span></a>
-          <a class="button button-quiet" href="#contact">带一个真实问题来聊 <span aria-hidden="true">↘</span></a>
+
+<div class="hero-stage" id="top">
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="#top"><img src="assets/logo-mark.png" alt="脉动无休标志" width="256" height="256">脉动无休<i>MAIDONG WUXIU</i></a>
+      <nav class="nav" aria-label="主导航"><a href="#scenes">现场</a><a href="#ai">AI</a><a href="#works">作品</a><a href="#services" class="keep">服务</a><a href="#cv">履历</a><a href="geo/">AI 可见度</a><a href="blog/">文章</a><a href="#contact" class="nav-cta">聊一聊</a></nav>
+    </div>
+  </header>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div class="hero-copy" id="hero-copy">
+        <p class="hero-who"><span>解睿 · 脉动无休 · JERRY</span><span>珠海</span><span>2010 年至今</span></p>
+        <h1 id="hero-title"><span class="ln"><i>把事做成，</i></span><span class="ln"><i>让人也能<span class="hl">做成。</span></i></span></h1>
+        <p class="hero-sub">带过工地、门店和研发团队。现在<b>用 AI 干活</b>，帮小老板把只有他会的事，交到别人手上。</p>
+        <div class="hero-cta">
+          <a class="btn btn-ink" href="#services">我是老板，带个问题来 <span aria-hidden="true">↘</span></a>
+          <a class="btn" href="#cv">我在找人，先看履历 <span aria-hidden="true">↘</span></a>
         </div>
-        <ul class="hero-tags" aria-label="工作领域"><li>DESIGN THINKING</li><li>TOC 制约理论</li><li>AI × SOFTWARE</li></ul>
       </div>
-      <div class="spatial" aria-label="由现场、结构与系统组成的 3D 空间构图">
-        <p class="spatial-label top">UNFOG / FROM HIDDEN TO WORKING</p>
-        <div class="scene" id="scene" aria-hidden="true">
-          <span class="axis"></span><span class="axis axis-b"></span>
-          <div class="cube">
-            <div class="cube-face cube-front"><span class="cube-core">PROBLEM<br>→ PRODUCT</span></div>
-            <div class="cube-face cube-back"></div><div class="cube-face cube-right"></div><div class="cube-face cube-left"></div><div class="cube-face cube-top"></div><div class="cube-face cube-bottom"></div>
-          </div>
-          <div class="float-card float-a" data-focus="field"><span class="num">01 / FIELD</span><strong>真实现场</strong><small>看见约束 · 找到问题</small></div>
-          <div class="float-card float-b" data-focus="model"><span class="num">02 / MODEL</span><strong>拆解与设计</strong><small>设计思维 × TOC 找真约束</small></div>
-          <div class="float-card float-c" data-focus="build"><span class="num">03 / BUILD</span><strong>产品进入日常</strong><small>能试用 · 能验证 · 能迭代</small></div>
-          <span class="scene-cross cross-a"></span><span class="scene-cross cross-b"></span>
+      <div class="hero-art" id="hero-art">
+        <span class="hero-tag">交接</span>
+        <figure class="print" style="margin:0"><img src="assets/v5/hero-handover.webp" width="1600" height="1073" alt="一只老练的手把画好步骤的清单递给另一只手" fetchpriority="high"></figure>
+        <div class="stamp" aria-hidden="true">
+          <svg viewBox="0 0 132 132"><defs><path id="cp" d="M66,66 m-52,0 a52,52 0 1,1 104,0 a52,52 0 1,1 -104,0"/></defs><text><textPath href="#cp">只有他会的 · 变成别人也会 · </textPath></text></svg>
+          <span class="core">一件<br>一件</span>
         </div>
-        <p class="spatial-label bottom">FIELD NOTES / PRODUCT SYSTEMS / 2026</p>
-        <p class="spatial-note">MOVE TO EXPLORE · SCROLL TO SHIFT</p>
       </div>
     </div>
-    <svg class="stamp" viewBox="0 0 128 128" aria-hidden="true">
-      <defs><path id="circ" d="M64,64 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
-      <circle class="face" cx="64" cy="64" r="60"/>
-      <text><textPath href="#circ">让隐性经验 · 变成信任资产 · UNFOG 雾开 · SINCE 2026 · </textPath></text>
-      <rect class="core" x="52" y="52" width="24" height="24" transform="rotate(45 64 64)"/>
-    </svg>
+    <a class="scroll-cue" href="#scenes">往下看</a>
+  </section>
+</div>
+
+<div class="ticker" aria-hidden="true"><div class="ticker-track"><span>施工现场</span><span>门店运营</span><span>研发团队</span><span>经营顾问</span><span>AI 产品</span><span>线上内容</span><span>施工现场</span><span>门店运营</span><span>研发团队</span><span>经营顾问</span><span>AI 产品</span><span>线上内容</span></div></div>
+
+<main>
+<section class="sec" id="scenes" aria-labelledby="scenes-t">
+  <div class="wrap">
+    <div class="sec-head" data-in="rise"><p class="kicker"><b>01</b>三种现场</p><h2 id="scenes-t">三种现场，同一种改法。</h2></div>
+    <div class="scn-grid">
+      <article class="scn" data-in="paper">
+        <figure><img src="assets/v5/scene-site.webp" width="1000" height="746" alt="旧房翻新工地，墙上贴着按顺序排好的工序板" loading="lazy"></figure>
+        <div class="scn-body"><span class="scn-no">现场 01</span><h3>施工现场</h3>
+          <p><b>卡在</b>工人按天结钱，今天来明天走，流程没人听。</p>
+          <p class="fix"><b>我改</b>工序顺序和交接责任：上一道没完，下一道不开工。</p></div>
+      </article>
+      <article class="scn" data-in="paper" style="--d:.1s">
+        <figure><img src="assets/v5/scene-store.webp" width="1000" height="746" alt="建材门店柜台前，老板和店员一起看报价单" loading="lazy"></figure>
+        <div class="scn-body"><span class="scn-no">现场 02</span><h3>门店运营</h3>
+          <p><b>卡在</b>只有老板会报价、会拍板，店员只负责动手。</p>
+          <p class="fix"><b>我改</b>把报价拆细，细到店员也算得出来。</p></div>
+      </article>
+      <article class="scn" data-in="paper" style="--d:.2s">
+        <figure><img src="assets/v5/scene-rnd.webp" width="1000" height="746" alt="研发团队围着同一张流程图工作" loading="lazy"></figure>
+        <div class="scn-body"><span class="scn-no">现场 03</span><h3>研发团队</h3>
+          <p><b>卡在</b>设计、产品、开发各说各的，靠开会凑到一起。</p>
+          <p class="fix"><b>我改</b>先定一张大家都认的流程图，再分头干。</p></div>
+      </article>
+    </div>
+    <p class="scn-close" data-in="rise">把<em>「只有某个人会的」</em>，变成<em>「别人也能做的」</em>。</p>
   </div>
 </section>
-<div class="ticker-wrap" aria-hidden="true">
-  <div class="ticker t1"><div class="ticker-track" id="tick1">把隐性的经验 显性化<i>✦</i>DESIGN THINKING × TOC × AI<i>✦</i>先看清楚 再回应<i>✦</i>用设计思维 拆解生意<i>✦</i>把隐性的经验 显性化<i>✦</i>DESIGN THINKING × TOC × AI<i>✦</i>先看清楚 再回应<i>✦</i>用设计思维 拆解生意<i>✦</i></div></div>
-  <div class="ticker t2"><div class="ticker-track">让隐性经验 变成信任资产<i>✦</i>生意说 · 住明白 · 企业诊断<i>✦</i>珠海 — REMOTE<i>✦</i>让隐性经验 变成信任资产<i>✦</i>生意说 · 住明白 · 企业诊断<i>✦</i>珠海 — REMOTE<i>✦</i></div></div>
-</div>
-<main>
-  <section class="section wrap" id="approach">
-    <span class="ghost" aria-hidden="true">00</span>
-    <div class="section-head">
-      <p class="section-index"><b>00</b> THE THROUGHLINE</p>
-      <div><h2>让隐性的东西，<br>显出形状。</h2><p class="section-lede">Unfog 雾开是我做产品的共同源头：把说不清的经验，变成能工作的东西。</p></div>
-    </div>
-    <div class="rootline rise">
-      <h3>不是给问题贴一层 AI，<br>而是先看懂它怎么发生。<br><em>再设计一个能运行的解法。</em></h3>
-      <div class="rootline-copy"><div class="flow" aria-label="工作路径"><span>现场观察</span><i>→</i><span>问题建模</span><i>→</i><span>体验与系统设计</span><i>→</i><span>试点验证</span></div></div>
-    </div>
-  </section>
-  <section class="section wrap" id="projects">
-    <span class="ghost" aria-hidden="true">01</span>
-    <div class="section-head">
-      <p class="section-index"><b>01</b> SELECTED WORK</p>
-      <div><h2>两款上线的产品，<br>一项正在验证的工具。</h2><p class="section-lede">展开卡片，看问题、做法、取舍，以及验证到哪一步。</p></div>
-    </div>
-    <div class="project-grid">
-      <article class="project shengyi rise">
-        <div class="project-head"><span class="project-code">01 / SHENGYI-NEXT</span></div>
-        <span class="stamp-badge">已上线 LIVE</span>
-        <p class="project-logo">UNFOG · 生意说</p><h3>生意说</h3><p class="project-tagline">把真实经营经验，变成可复用的营销内容。</p>
-        <p>语音或文字访谈梳理经营经验；经营者确认后，才生成可编辑的策略与内容草稿。</p>
-        <div class="project-process"><span>经营者表达</span><i>→</i><span>确认与校准</span><i>→</i><span>内容草稿</span><i>→</i><span>人工审核</span></div>
-        <p class="project-boundary">服务于营销（Marketing），不是销售（Sales）：不承诺获客、成交或增长，不自动发布。</p>
-        <details class="case-more"><summary>展开拆解 · 问题 / 机制 / 取舍</summary><div class="case-detail-grid"><div><h4>问题起点</h4><p>有经验、有细节，却说不清客户为什么信任自己；通用 AI 写作容易把猜测写成事实。</p></div><div><h4>产品机制</h4><p>先访谈收原话，AI 整理理解卡，确认后才进草稿；原话与生成内容分层保留。</p></div><div><h4>关键取舍</h4><p>「确认」是表达校准，不是事实认证；内容留给经营者审核。</p></div><div><h4>我的工作</h4><p>产品定位、访谈流程与内容资产边界的设计。</p></div></div></details>
-        <a class="project-link" href="https://sy.unfog.cn" target="_blank" rel="noopener">访问生意说 <span aria-hidden="true">↗</span></a>
-      </article>
-      <article class="project rise">
-        <div class="project-head"><span class="project-code">02 / ZHUMB</span></div>
-        <span class="stamp-badge">已上线 LIVE</span>
-        <p class="project-logo">UNFOG · 住明白</p><h3>住明白</h3><p class="project-tagline">见面前，先把真正要聊的事整理出来。</p>
-        <p>AI 访谈收集业主的生活需要与现实限制，整理成可追溯的需求条目——见面前的一份共同底稿。</p>
-        <div class="project-process"><span>业主原话</span><i>→</i><span>追问与澄清</span><i>→</i><span>需求条目</span><i>→</i><span>会前沟通</span></div>
-        <p class="project-boundary">不是设计、报价或施工管理工具；AI 只访谈与整理，不做方案判断。</p>
-        <details class="case-more"><summary>展开拆解 · 问题 / 机制 / 取舍</summary><div class="case-detail-grid"><div><h4>问题起点</h4><p>偏好说得出口，生活习惯、家庭分歧和预算顾虑往往留在没说清的地方。</p></div><div><h4>产品机制</h4><p>AI 追问具体生活场景，原话变成可追溯的需求条目；业主与设计师各有视角。</p></div><div><h4>关键取舍</h4><p>只整理需求，不抢设计师的判断；不承诺「收回所有副本」。</p></div><div><h4>我的工作</h4><p>产品定义、访谈流程与报告逻辑设计。</p></div></div></details>
-        <a class="project-link" href="https://zmb.unfog.cn" target="_blank" rel="noopener">访问住明白 <span aria-hidden="true">↗</span></a>
-      </article>
-      <article class="project toc-project rise" id="toc-project">
-        <div class="project-head"><span class="project-code">03 / UNFOG-TOC</span></div>
-        <span class="stamp-badge">研究验证 PROTOTYPE</span>
-        <p class="project-logo">UNFOG · 企业诊断访谈工具</p><h3>找卡住全局的那一环</h3><p class="project-tagline">把「TOC 制约理论」变成一场可以追问的诊断对话。</p>
-        <p>不从「管理混乱」「销售不行」下结论：先说清系统要什么结果，收集反复发生的糟心事，连成因果链，找出卡住全局的那一环，再做一个小改善去验证。</p>
-        <div class="project-process"><span>先定目标</span><i>→</i><span>收集糟心事</span><i>→</i><span>连因果链</span><i>→</i><span>锁定瓶颈</span><i>→</i><span>小步验证</span></div>
-        <p class="project-boundary">可运行的原型验证，不是已证实的经营改善案例；一次对话不能自动证明根因。</p>
-        <details class="case-more"><summary>展开拆解 · 理论 / 访谈 / 证据</summary><div class="case-detail-grid"><div><h4>理论怎么用</h4><p>把「现实树」「蒸发云」等思维工具翻译成访谈目标，不是固定题目的问卷。</p></div><div><h4>访谈怎么做</h4><p>多轮短对话，每轮一个目标；每条结论都能回溯到原话，跨会话推进。</p></div><div><h4>证据纪律</h4><p>事实、推论、假设分开写；候选瓶颈过三道检验——流量、小改见效、替代解释。</p></div><div><h4>验证到哪一步</h4><p>已验证：协议、语音访谈、材料追踪可在测试环境跑通；未验证：真实企业的改善效果。</p></div></div></details>
-        <a class="project-link" href="#toc">看这套方法和内观、佛学的关系 <span aria-hidden="true">↘</span></a>
-      </article>
-    </div>
-  </section>
-  <section class="method-section" id="toc">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="section-index"><b>02</b> METHOD &amp; MIND</p>
-        <div><h2>向外，找到那一环；<br>向内，看清这一念。</h2><p class="section-lede">TOC 看系统，缘起看条件，内观看自己——不同源头，在实践里互相校准。</p></div>
+
+<section class="sec on-ink" id="ai" aria-labelledby="ai-t">
+  <div class="wrap ai-grid">
+    <div class="ai-art" data-in="slide"><figure class="print" style="margin:0"><img src="assets/v5/ai-crew.webp" width="1200" height="805" alt="一个人坐在海边窗前，几个纸做的小机器人分别递来胶片、评论卡、表格和代码" loading="lazy"></figure></div>
+    <div>
+      <div data-in="rise"><p class="kicker"><b>02</b>一个人 + AI</p><h2 id="ai-t">一个人，带一组 AI 干活。</h2>
+      <p class="lede">AI 负责跑腿，判断还是人来做。下面是最近真实做过的几件事。</p></div>
+      <div class="stats" data-in="lift">
+                <div class="stat"><span class="num" data-count="3691">3,691<small>条</small></span><p>客户评论，帮珠海一家建材店读完：客户问得最多的是价格，不是好不好看。</p></div>
+        <div class="stat"><span class="num" data-count="20">20<small>条</small></span><p>短视频，拆进 5 个拍摄场景，老板只要空出一天。</p></div>
+        <div class="stat"><span class="num" data-count="7">7<small>分钟</small></span><p>一张手写送货单，变成能直接打印、金额核对过的表格。</p></div>
+        <div class="stat"><span class="num" data-count="47000" data-fmt="wan">4.7<small>万</small></span><p>行代码。生意说这款产品，从设计到上线，我一个人加 AI 做完。</p></div>
       </div>
-      <div class="visual-band rise">
-        <figure class="visual-card">
-          <span class="ph"><img src="assets/toc-chain.jpg" alt="一条深色金属链条，只有正中一环发出橙色光" loading="lazy" width="1600" height="1073"></span>
-          <figcaption class="visual-caption"><strong>系统的产出，卡在最弱的一环。</strong><span>TOC · 制约理论（物理学家高德拉特提出）</span></figcaption>
-        </figure>
-        <figure class="visual-card">
-          <span class="ph"><img src="assets/yuanqi-ripples.jpg" alt="深色水面上的同心圆涟漪，其中一圈带暖橙色光" loading="lazy" width="1600" height="1073"></span>
-          <figcaption class="visual-caption"><strong>此有故彼有。</strong><span>缘起 · 现象由条件聚合而生，条件一变，现象跟着变。</span></figcaption>
-        </figure>
-        <figure class="visual-card">
-          <span class="ph"><img src="assets/neiguan-stone.jpg" alt="深色水面上一块光滑的石头，边缘带一点暖橙色光" loading="lazy" width="1600" height="1073"></span>
-          <figcaption class="visual-caption"><strong>先看清楚，再回应。</strong><span>内观 · 观察感受的生灭，培养平等心。</span></figcaption>
-        </figure>
+      <p class="ai-note">→ 我也教团队这样干活：每个人都多一组帮手。</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="works" aria-labelledby="works-t">
+  <div class="wrap">
+    <div class="sec-head" data-in="rise"><p class="kicker"><b>03</b>做好的东西</p><h2 id="works-t">先自己做通，再交出去。</h2><p class="lede">下面这几样都是我自己设计、写代码、上线的，可以直接点开看。</p></div>
+    <div class="works">
+      <a class="work feat" data-in="paper" href="https://sy.unfog.cn" target="_blank" rel="noopener">
+        <figure class="print"><img src="assets/v5/shot-shengyi.webp" width="1200" height="750" alt="生意说首页：选行业、说一段原话、AI 整理后由老板确认" loading="lazy"></figure>
+        <div class="feat-body"><div class="work-top"><span>01 · 生意说</span><span class="chip live">已上线</span></div><h3>生意说</h3><p>老板说一段话，AI 整理成客户信得过的内容；老板确认了才发。</p><span class="go">sy.unfog.cn <span>↗</span></span></div>
+      </a>
+      <div class="work-list">
+        <a class="work row" data-in="slide" href="https://zmb.unfog.cn" target="_blank" rel="noopener"><div class="work-top"><span>02 · 住明白</span><span class="chip live">已上线</span></div><h3>住明白</h3><p>装修见面前，先把真正要聊的事整理好。</p><span class="go">zmb.unfog.cn <span>↗</span></span></a>
+        <a class="work row" data-in="slide" style="--d:.08s" href="https://yyt.unfog.cn" target="_blank" rel="noopener"><div class="work-top"><span>03 · 有一套</span><span class="chip live">已上线</span></div><h3>有一套</h3><p>一场 AI 访谈，帮你想清楚个人账号该怎么做。</p><span class="go">yyt.unfog.cn <span>↗</span></span></a>
+        <div class="work row" data-in="slide" style="--d:.16s"><div class="work-top"><span>04 · 诊断访谈</span><span class="chip proto">试用中</span></div><h3>找卡住的那一环</h3><p>一场能追问的对话，找出店里最卡的那一步。</p><span class="go" style="color:var(--ink-faint)">还在内部试</span></div>
       </div>
-      <div class="converge rise">
-        <span class="c-label">交汇处</span>
-        <span class="c-point">观察先于判断</span>
-        <span class="c-point">辨别事实与解释</span>
-        <span class="c-point">介入之后，回到现场再看</span>
-        <em>情绪涌起的地方，往往藏着约束候选。</em>
-      </div>
-      <div class="toc-lower">
-        <div class="toc-focus">
-          <p class="section-kicker" style="color:#8d9aa2">TOC / 聚焦五步（FIVE FOCUSING STEPS）</p><h3>高德拉特的五步，一句话一个。</h3>
-          <div class="focus-steps">
-            <div class="focus-step"><b>01 / IDENTIFY</b><span>识别 · 找到卡住全局的那一环</span></div>
-            <div class="focus-step"><b>02 / EXPLOIT</b><span>榨干 · 先不投资，把这一环用到极限</span></div>
-            <div class="focus-step"><b>03 / SUBORDINATE</b><span>迁就 · 让其他环节都为它让路</span></div>
-            <div class="focus-step"><b>04 / ELEVATE</b><span>升级 · 还不够，才花钱扩这一环</span></div>
-            <div class="focus-step"><b>05 / REPEAT</b><span>重来 · 瓶颈搬家了，回到第一步</span></div>
-          </div>
-          <details class="theory-tools"><summary>展开 TOC 思维工具说明</summary><div class="theory-tool-grid"><p><strong>现实树</strong><br>用「因为…所以…」把不顺连成树，每条连接要证据，也要反例。</p><p><strong>蒸发云</strong><br>写下僵局背后的隐含假设——看清假设，冲突自己蒸发。</p><p><strong>负面分支</strong><br>行动前先想哪里会翻车，给风险留检测点。</p><p><strong>前提树 / 转变树</strong><br>把「想做」翻译成「能做」：障碍、中间目标、先后顺序。</p></div></details>
+    </div>
+    <p class="works-foot">代码与工具也放在 <a href="https://github.com/xie1701" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:3px">GitHub · xie1701</a>。</p>
+  </div>
+</section>
+
+<section class="sec svc-band" id="services" aria-labelledby="svc-t">
+  <div class="wrap">
+    <div class="sec-head" data-in="rise"><p class="kicker"><b>04</b>怎么合作</p><h2 id="svc-t">五种合作方式，<br>每种都先说清楚三件事。</h2><p class="lede">你能拿到什么，要投入什么，我不碰什么。</p></div>
+    <div class="svcs">
+      <article class="svc lead" data-in="paper">
+        <span class="svc-no">01 · 经营顾问</span>
+        <h3>把只有你会干的事，<br>拆给店里别人干。</h3>
+        <dl>
+          <div><dt>你拿到</dt><dd>四到六周后，有一件原来只有你会的事，别人能照着做。</dd></div>
+          <div><dt>你投入</dt><dd>头两周我来得勤，之后每周半天，再之后每月一次。细活我干，你接单。</dd></div>
+          <div><dt>我不碰</dt><dd>卖货是你的本事，不承诺业绩。谁干什么先不变，我只把你手上的一件事写成步骤，交给你指定的人。</dd></div>
+        </dl>
+        <p class="first">第一步：挑一件最要紧的事，按一个月算。第一个月没交出去，第二个月就不做。</p>
+      </article>
+      <article class="svc tool" data-in="paper" style="--d:.1s">
+        <span class="badge-soon">即将上线</span>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <span class="svc-no">02 · 小微企业 AI 改善工具</span>
+          <h3>说一句话，<br>它告诉你钱卡在哪。</h3>
+          <dl>
+            <div><dt>你拿到</dt><dd>卡在哪一步、卡了多久，一屏看清。</dd></div>
+            <div><dt>你投入</dt><dd>用手机说话就行，不用填表。</dd></div>
+            <div><dt>我不碰</dt><dd>不做考核，不监控员工。</dd></div>
+          </dl>
+          <p class="first"><a href="#contact">想第一批试用，微信说一声。</a></p>
         </div>
-        <div class="toc-bridge">
-          <p class="toc-path-heading">UNFOG 诊断访谈路径 · 把方法转成一场对话</p>
-          <div class="toc-path" aria-label="企业诊断访谈路径">
-            <article class="toc-stage"><span class="stage-no">01</span><h3>先定目标</h3><p>看哪个系统、什么算变好。</p></article>
-            <article class="toc-stage"><span class="stage-no">02</span><h3>收集糟心事</h3><p>只要反复发生的事实，不收评价。</p></article>
-            <article class="toc-stage"><span class="stage-no">03</span><h3>连因果链</h3><p>结果和原因一条条连，同时找反例。</p></article>
-            <article class="toc-stage"><span class="stage-no">04</span><h3>锁定瓶颈</h3><p>流量、小改见效、替代解释，三道检验。</p></article>
-            <article class="toc-stage"><span class="stage-no">05</span><h3>小步验证</h3><p>做一个能测量的改善，回现场再看。</p></article>
-          </div>
-        </div>
-      </div>
-      <p class="theory-note">边界：三者研究对象与目的不同——这是我的个人方法论并置，不是理论等价，也不承诺「一次找到唯一根因」。</p>
-    </div>
-  </section>
-  <section class="section wrap" id="fields">
-    <span class="ghost" aria-hidden="true">03</span>
-    <div class="section-head">
-      <p class="section-index"><b>03</b> FIELD SERVICE</p>
-      <div><h2>你的生意，<br>值得被更多人看见。</h2><p class="section-lede">本地商家线上内容共建：把店里多年做对的事，做成客户信得过、AI 也收录的线上内容。这也是我把自己放进业务里工作的入口——业内叫 FDE：驻进现场的工程师。</p></div>
-    </div>
-    <div class="rootline serve-why rise">
-      <h3>太多认真经营的店，<br>在互联网上几乎是空白的。<br><em>不出现，几乎等于不存在。</em></h3>
-      <div class="rootline-copy">
-        <p>短视频的浪潮里没声音，客户刷到记不住你；接下来 AI 会越来越多地替人做选择——问一句「本地哪家靠谱」，答案只会从有内容积累的店里产生。没有线上内容的店，接下来的经营只会更难。</p>
-        <p>我做的，就是把您多年做对的事——手艺、判断、服务标准、真实案例——变成持续更新的线上内容：<strong>被看见、被记住、被推荐。</strong></p>
-        <p class="project-boundary">边界照旧：不承诺爆款、粉丝数、询盘量、成交额。我负责的，是一套别人复制不走、客户看得懂的表达。</p>
-      </div>
-    </div>
-    <a class="geo-band rise" href="geo/" aria-label="GEO 生成式引擎优化：AI 可见度诊断方法">
-      <span>
-        <span class="gb-k">GEO · 生成式引擎优化 / AI VISIBILITY</span>
-        <span class="gb-t">客户不搜关键词了，他直接问 AI。<br>你的店在那个答案里吗？</span>
-        <span class="gb-d">百科、官网、SEO 都齐了，AI 还是说不清你做什么——这不是流量问题，是实体和引用链断了。看我怎么做这一步：诊断七问、实体消歧、内容可引用化。</span>
-      </span>
-      <span class="gb-go">看方法 ↗</span>
-    </a>
-    <div class="serve-grid">
-      <article class="project serve-card rise">
-        <div class="project-head"><span class="project-code">A / ONLINE</span><span class="stamp-badge">按月共建</span></div>
-        <p class="project-logo">CO-CREATE ONLINE</p><h3>线上共创</h3><p class="project-tagline">AI 梳理＋每周线上深聊。</p>
-        <p>AI 工具先把店里的经验系统梳理（含赠品工具会员），每周固定时间线上深聊。适合老板愿意自己讲、按规范拍素材的店。</p>
-        <div class="project-process"><span>AI 梳理</span><i>→</i><span>每周深聊</span><i>→</i><span>内容成稿</span><i>→</i><span>店主发布</span></div>
+        <figure><img src="assets/v5/tool-chain.webp" width="1000" height="746" alt="手机里传出的声波变成一条链子，其中一环是橙色的" loading="lazy"></figure>
       </article>
-      <article class="project serve-card rise">
-        <div class="project-head"><span class="project-code">B / ONSITE</span><span class="stamp-badge">按月共建</span></div>
-        <p class="project-logo">CO-CREATE ONSITE</p><h3>上门共创</h3><p class="project-tagline">每月上门半天＋每周线上确认。</p>
-        <p>每月到店深访与现场拍摄，每周线上确认当周内容。适合想省心、素材需要专业采集的店。珠海本地优先。</p>
-        <div class="project-process"><span>到店深访</span><i>→</i><span>现场拍摄</span><i>→</i><span>每周确认</span><i>→</i><span>店主发布</span></div>
+      <article class="svc" data-in="rise">
+        <span class="svc-no">03 · 线上内容共建</span>
+        <h3>店里做对的事，<br>让客户在网上看见。</h3>
+        <dl>
+          <div><dt>你拿到</dt><dd>每周一条短视频、一篇小红书、一篇文章；第一个月先把你店里的好处写成一份底稿。</dd></div>
+          <div><dt>你投入</dt><dd>老板本人开口。每周线上聊一次，或我每月上门拍半天。</dd></div>
+          <div><dt>我不碰</dt><dd>账号归你，不承诺爆款和询盘。</dd></div>
+        </dl>
+      </article>
+      <article class="svc" data-in="rise" style="--d:.08s">
+        <span class="svc-no">04 · AI 可见度诊断</span>
+        <h3>客户问豆包、DeepSeek<br>哪家好，会不会说到你。</h3>
+        <dl>
+          <div><dt>你拿到</dt><dd>一份诊断：AI 说不说得出你是谁，怎么改。</dd></div>
+          <div><dt>你投入</dt><dd>一次线上沟通，给我店名和公开账号。</dd></div>
+          <div><dt>我不碰</dt><dd>不刷量，不承诺排名。</dd></div>
+        </dl>
+        <p class="first"><a href="geo/">看诊断怎么做 ↗</a></p>
+      </article>
+      <article class="svc" data-in="rise" style="--d:.16s">
+        <span class="svc-no">05 · 带队</span>
+        <h3>全职或驻场，<br>带一支队伍。</h3>
+        <dl>
+          <div><dt>你拿到</dt><dd>一个能带人、也能自己上手做的负责人。</dd></div>
+          <div><dt>你投入</dt><dd>全职，或按项目驻场一段时间。</dd></div>
+          <div><dt>地点</dt><dd>珠海优先，也接受远程。</dd></div>
+        </dl>
+        <p class="first"><a href="#cv">先看履历 ↘</a></p>
       </article>
     </div>
-    <div class="serve-output rise">
-      <span class="so-label">每周标准产出 · 每月四套</span>
-      <span class="so-item">1 条短视频<i>视频号 · 抖音</i></span>
-      <span class="so-item">1 篇小红书图文<i>小红书 · 微信贴图号</i></span>
-      <span class="so-item">1 篇深度文章<i>公众号 · 官网 · 媒体投稿</i></span>
+    <div class="faq">
+      <div class="qa" data-in="rise"><h3>你没做过我们这行？</h3><p>我不带你们行里的老习惯进来。一行人都用同一套做法，所以也都卡在同一个地方。</p></div>
+      <div class="qa" data-in="rise" style="--d:.08s"><h3>你进来，会不会打乱现在的生意？</h3><p>正在赚钱的部分先不动。每次只改一件事，改之前说好怎么看效果，看不到效果就退回原样。</p></div>
+      <div class="qa" data-in="rise" style="--d:.16s"><h3>店员学会了，跳槽怎么办？</h3><p>步骤写成纸、留在店里，人走了，换个人照着做就行。这正是要做的事。</p></div>
     </div>
-    <p class="serve-note rise">首月先做一次深度访谈，产出一份《门店表达底稿》——这家店第一次被系统地「说清楚」，也是后续所有内容的地基。合作需要：老板本人出面、素材按规范提供、事实 48 小时内确认、账号归店主、只写真实。费用与合作方式，<a href="#contact" style="border-bottom:2px solid var(--orange)">微信聊</a>。</p>
-    <p class="notice" style="margin-top:64px">以下为探索方向 / 需与业务方共同验证，不代表已有上线项目</p>
-    <div class="scene-list">
-      <article class="scene-row rise"><span class="scene-num">FIELD 01</span><div><h3>经营经验 × 内容系统</h3><p>把老板和一线知道、却没空说明白的细节，整理成经过确认、可复用的表达。</p><small>INTERVIEW → KNOWLEDGE → MARKETING MATERIAL</small></div></article>
-      <article class="scene-row rise"><span class="scene-num">FIELD 02</span><div><h3>库存 × 采购协同</h3><p>从盘点、出入库和缺货异常切入，做看板与提醒；关键决策由人确认。</p><small>STOCK → EXCEPTION → HUMAN DECISION</small></div></article>
-      <article class="scene-row rise"><span class="scene-num">FIELD 03</span><div><h3>工程 × 项目交付</h3><p>把进度、材料到场和变更协同放进一条看得见的流程。</p><small>PROJECT → STATUS → NEXT ACTION</small></div></article>
-      <article class="scene-row rise"><span class="scene-num">FIELD 04</span><div><h3>企业知识 × 岗位助手</h3><p>从文档和群聊里梳理资料、权限与更新责任，让岗位能查能用。</p><small>KNOWLEDGE → PERMISSION → WORKFLOW</small></div></article>
+  </div>
+</section>
+
+<section class="sec" id="method" aria-labelledby="method-t">
+  <div class="wrap">
+    <div class="sec-head" data-in="rise"><p class="kicker"><b>05</b>头三天</p><h2 id="method-t">不管哪种合作，头三天都一样。</h2></div>
+    <div class="days" data-in="lift">
+      <article class="day"><span class="day-big" aria-hidden="true">01</span><div class="day-body"><span class="day-no">第 1 天</span><h3>只看原始的东西</h3><p>报价单、送货单、聊天记录，不看整理过的报表。</p></div></article>
+      <article class="day"><span class="day-big" aria-hidden="true">02</span><div class="day-body"><span class="day-no">第 2 天</span><h3>找出卡住的那一环</h3><p>谁在等谁，等了多久，同样的错出了第几次。</p></div></article>
+      <article class="day"><span class="day-big" aria-hidden="true">03</span><div class="day-body"><span class="day-no">第 3 天</span><h3>带一个小改动走</h3><p>小到下周就能看出有没有用。</p></div></article>
     </div>
-  </section>
-  <section class="method-band" id="method">
+    <p class="days-out" data-in="rise"><span>不交厚报告</span><span>交一个能测的数字</span><span>和一个已经试过的改动</span></p>
+  </div>
+</section>
+
+<section class="cv-stage" id="cv" aria-labelledby="cv-t">
+  <div class="cv-sticky">
     <div class="wrap">
-      <div class="section-head"><p class="section-index"><b>04</b> HOW I WORK</p><div><h2>先把问题做小，<br>再把系统做真。</h2><p class="section-lede">不先卖宏大方案，从具体流程开始。</p></div></div>
-      <div class="method-grid">
-        <article class="method-step rise"><span class="step-no">01 / OBSERVE</span><h3>进入现场，找到窄问题</h3><p>看真实流程和数据，和使用者一起定义问题。</p></article>
-        <article class="method-step rise" style="--d:.08s"><span class="step-no">02 / DESIGN &amp; BUILD</span><h3>做出能试的版本</h3><p>用现有工具、AI 和软件做最小可用版本。</p></article>
-        <article class="method-step rise" style="--d:.16s"><span class="step-no">03 / VERIFY</span><h3>在日常里验证、交接</h3><p>在使用中修正，明确边界，再决定扩大。</p></article>
+      <div class="cv-head" data-in="rise">
+        <div><p class="kicker"><b>06</b>经历</p><h2 id="cv-t">十几年，换过场子，<br>没换过要做的事。</h2></div>
+        <p class="cv-edu"><b>四川农业大学</b><br>木材科学与工程 · 工学学士<br>学过装修设计与施工、家具设计与制造</p>
       </div>
-      <p class="method-foot">FDE · FORWARD DEPLOYED ENGINEER —— 驻进现场，和业务一起把东西做出来。</p>
+      <div class="cv-track" id="cv-track">
+        <article class="cv-item"><span class="cv-year">2010—2014</span><span class="cv-role">装修公司创业 · 设计与施工</span><h3>从量房做到交房</h3><p><b>学到</b>工地的事不是讲出来的，是排出来的。</p></article>
+        <article class="cv-item"><span class="cv-year">2014—2018</span><span class="cv-role">VR / AR 产品 · 上海</span><h3>空间展示做成产品</h3><p><b>学到</b>硬件和软件的团队，得先对上同一张图。</p></article>
+        <article class="cv-item"><span class="cv-year">2018—2021</span><span class="cv-role">企业软件实施与培训</span><h3>让买来的工具真有人用</h3><p><b>学到</b>工具好不好，看一线员工第二周还用不用。</p></article>
+        <article class="cv-item"><span class="cv-year">2021—2024</span><span class="cv-role">家装服务流程</span><h3>把现场交付拆成步骤</h3><p><b>学到</b>老师傅脑子里的东西，能写下来，就能教给人。</p></article>
+        <article class="cv-item key"><span class="cv-year">2024—2026</span><span class="cv-role">实体零售 · 经营负责人</span><h3>门店、激励和培训</h3><p><b>学到</b>罚款带不动人，规则清楚、能做到，才带得动。</p></article>
+        <article class="cv-item now"><span class="cv-year">2026—NOW</span><span class="cv-role">无休科技 · 独立顾问与 AI 产品</span><h3>一个人加 AI，做顾问也做产品</h3><p><b>正在</b>给珠海本地门店做经营顾问与内容；小微企业 AI 改善工具即将上线。</p></article>
+      </div>
+      <div class="cv-bar" aria-hidden="true"><i></i><span>继续往下滚，时间往右走 →</span></div>
     </div>
-  </section>
-  <section class="section wrap" id="experience">
-    <span class="ghost" aria-hidden="true">05</span>
-    <div class="section-head"><p class="section-index"><b>05</b> BACKGROUND</p><div><h2>跨过行业，也跨过设计与工程的边界。</h2><p class="section-lede">从装修现场出发，经过 VR/AR 与企业 SaaS，走到 AI 产品。</p></div></div>
-    <div class="timeline">
-      <article class="timeline-item rise"><div class="tl-top"><span class="tl-year">2010—2014</span><span class="tl-title">装修创业与项目交付</span><span class="tl-dots"></span></div><p>客户沟通、空间设计、施工交付——从现场理解需求与变更。</p></article>
-      <article class="timeline-item rise"><div class="tl-top"><span class="tl-year">2014—2018</span><span class="tl-title">VR / AR 产品与商业化</span><span class="tl-dots"></span></div><p>空间展示与设计流程的产品与项目落地。</p></article>
-      <article class="timeline-item rise"><div class="tl-top"><span class="tl-year">2018—2021</span><span class="tl-title">企业 SaaS 数字化落地</span><span class="tl-dots"></span></div><p>企业工具的实施、培训与业务日常落地。</p></article>
-      <article class="timeline-item rise"><div class="tl-top"><span class="tl-year">2021—2024</span><span class="tl-title">家装服务流程产品化</span><span class="tl-dots"></span></div><p>让现场交付可理解、可协同、可复用。</p></article>
-      <article class="timeline-item rise"><div class="tl-top"><span class="tl-year">2024—2025</span><span class="tl-title">实体业务与创业实践</span><span class="tl-dots"></span></div><p>实体经营中的服务流程与客户体验验证。</p></article>
-      <article class="timeline-item rise"><div class="tl-top"><span class="tl-year">2026—NOW</span><span class="tl-title">Unfog 雾开 · AI 产品探索</span><span class="tl-dots"></span></div><p>把「隐性价值显性化」落进生意说、住明白。</p></article>
-      <p class="resume-note">经历概述基于个人履历整理；项目成果以公开产品为准。</p>
+  </div>
+</section>
+
+<section class="sec" id="writing" aria-labelledby="notes-t" style="padding-top:clamp(70px,9vw,120px)">
+  <div class="wrap">
+    <div class="sec-head" data-in="rise"><p class="kicker"><b>07</b>文章</p><h2 id="notes-t">写下来的想法。</h2></div>
+    <div class="notes">
+      <a class="note" data-in="rise" href="https://mp.weixin.qq.com/s/gS-_JfrXdcUueoFbKPbdpg" target="_blank" rel="noopener"><small>生意说的起点</small><h3>生意做得不差，为什么客户在网上就是找不到你？</h3></a>
+      <a class="note" data-in="rise" style="--d:.08s" href="https://mp.weixin.qq.com/s/u4DUKkpZEdGaxgrfWQvDow" target="_blank" rel="noopener"><small>住明白的起点</small><h3>与业主第一次见面的时间，留给真正该聊的事</h3></a>
+      <a class="note" data-in="rise" style="--d:.16s" href="blog/"><small>全部文章</small><h3>更多文章 ↗</h3></a>
     </div>
-  </section>
-  <section class="section wrap" id="writing">
-    <span class="ghost" aria-hidden="true">06</span>
-    <div class="section-head"><p class="section-index"><b>06</b> NOTES &amp; IDEAS</p><div><h2>产品背后，是我反复遇见的问题。</h2><p class="section-lede">两篇文章，记录产品为什么这样设计。</p></div></div>
-    <div class="writing-list">
-      <a class="article rise" href="https://mp.weixin.qq.com/s/u4DUKkpZEdGaxgrfWQvDow" target="_blank" rel="noopener"><span class="article-no">NOTE 01</span><div><h3>与业主第一次见面的时间，留给真正该聊的事</h3><p>住明白的起点</p></div><span class="article-arrow" aria-hidden="true">↗</span></a>
-      <a class="article rise" href="https://mp.weixin.qq.com/s/gS-_JfrXdcUueoFbKPbdpg" target="_blank" rel="noopener"><span class="article-no">NOTE 02</span><div><h3>生意做得不差，为什么客户在网上就是找不到你？</h3><p>生意说的起点</p></div><span class="article-arrow" aria-hidden="true">↗</span></a>
-    </div>
-  </section>
-  <section class="section wrap contact" id="contact">
-    <span class="ghost" aria-hidden="true">07</span>
-    <div class="section-head"><p class="section-index"><b>07</b> START WITH A REAL PROBLEM</p><div><h2>带一个真实问题来。</h2><p class="section-lede">说说业务卡在哪个环节，我们先判断值不值得做成一个小系统。</p></div></div>
-    <div class="contact-panel rise"><div class="contact-copy"><h3>设计的不是一张屏幕，<br>而是它进入现实之后怎么工作。</h3><p>珠海本地优先，也接受远程共创。点邮箱和微信号一键复制。</p></div><div class="contact-links"><button type="button" class="copy-chip" data-copy="xie1701@gmail.com">EMAIL　xie1701@gmail.com</button><button type="button" class="copy-chip" data-copy="xie1701">WECHAT　xie1701</button><a href="tel:+8616675610571">PHONE　16675610571 ↗</a><a href="https://github.com/xie1701" target="_blank" rel="noopener">GITHUB　xie1701 ↗</a></div></div>
-  </section>
+  </div>
+</section>
 </main>
-<footer class="footer wrap"><div class="footer-main"><span class="footer-brand"><img class="footer-logo" src="assets/logo-mark.png" alt="脉动无休标志" width="256" height="256"><strong>脉动无休</strong> · CREATIVE TECHNOLOGIST</span><span class="footer-filing"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">粤ICP备2026083279号-1</a></span></div><span>DESIGN WITH FEELING. BUILD WITH SYSTEMS. · <a href="/blog/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">文章 / BLOG</a></span></footer>
+
+<section class="contact on-ink" id="contact" aria-labelledby="contact-t">
+  <div class="wrap contact-grid">
+    <div data-in="rise">
+      <p class="kicker"><b>08</b>找我</p>
+      <h2 id="contact-t">带一件<em>具体的事</em>来。</h2>
+      <ol class="ways"><li>经营顾问：先挑一件事，按一个月算</li><li>线上内容或 AI 可见度诊断</li><li>全职或驻场带队</li></ol>
+    </div>
+    <div class="links" data-in="lift">
+      <button class="link" type="button" data-copy="xie1701"><span class="k">微信</span><span class="v">xie1701</span><span class="a">点击复制</span></button>
+      <button class="link" type="button" data-copy="xie1701@gmail.com"><span class="k">邮箱</span><span class="v">xie1701@gmail.com</span><span class="a">点击复制</span></button>
+      <a class="link" href="tel:+8616675610571"><span class="k">电话</span><span class="v">166 7561 0571</span><span class="a">拨打 ↗</span></a>
+      <a class="link" href="https://github.com/xie1701" target="_blank" rel="noopener"><span class="k">代码</span><span class="v">GitHub · xie1701</span><span class="a">打开 ↗</span></a>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="wrap"><span>脉动无休（解睿 / Jerry）· 本站由 无休科技（珠海）有限公司 运营 · <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">粤ICP备2026083279号-1</a></span><span><a href="geo/">AI 可见度</a> · <a href="blog/">文章 / BLOG</a> · <a href="llms.txt">llms.txt</a></span></div>
+</footer>
 <script>
 (() => {
   const root = document.documentElement;
-  const hero = document.querySelector('.hero');
-  const scene = document.getElementById('scene');
-  const floatnav = document.getElementById('floatnav');
-  const progress = document.getElementById('progress');
-  const ring = document.getElementById('cursor-ring');
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  root.classList.add('js-ready');
+  const loaded = () => root.classList.add('is-loaded');
+  (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(() => requestAnimationFrame(loaded));
+  setTimeout(loaded, 700);
 
-  if ('IntersectionObserver' in window) {
-    root.classList.add('js-ready');
-    const reveal = new IntersectionObserver(entries => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-in');
-          reveal.unobserve(entry.target);
-        }
-      }
-    }, {threshold: 0.12});
-    document.querySelectorAll('.rise').forEach(el => reveal.observe(el));
-    const heroObserver = new IntersectionObserver(entries => {
-      for (const entry of entries) {
-        hero.classList.toggle('is-active', entry.isIntersecting);
-        floatnav.classList.toggle('show', !entry.isIntersecting);
-      }
-    }, {threshold: 0.05});
-    heroObserver.observe(hero);
-    const stageObserver = new IntersectionObserver(entries => {
-      for (const entry of entries) entry.target.classList.toggle('is-active', entry.isIntersecting);
-    }, {rootMargin: '-38% 0px -38% 0px'});
-    document.querySelectorAll('.toc-stage').forEach(el => stageObserver.observe(el));
-  }
+  /* 区块出场 */
+  const els = document.querySelectorAll('[data-in]');
+  if ('IntersectionObserver' in window && !reduce) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px 8% 0px', threshold: .05 });
+    els.forEach(el => io.observe(el));
+  } else els.forEach(el => el.classList.add('in'));
 
-  document.querySelectorAll('.float-card').forEach(card => {
-    card.addEventListener('pointerenter', () => { scene.dataset.focus = card.dataset.focus; });
-    card.addEventListener('pointerleave', () => { delete scene.dataset.focus; });
-  });
-
-  // Copy-to-clipboard contact chips
-  document.querySelectorAll('.copy-chip').forEach(btn => {
-    const label = btn.textContent;
-    let timer = 0;
-    btn.addEventListener('click', async () => {
-      const text = btn.dataset.copy;
-      try {
-        await navigator.clipboard.writeText(text);
-      } catch (e) {
-        const ta = document.createElement('textarea');
-        ta.value = text;
-        ta.style.position = 'fixed';
-        ta.style.opacity = '0';
-        document.body.appendChild(ta);
-        ta.select();
-        try { document.execCommand('copy'); } catch (e2) {}
-        ta.remove();
-      }
-      btn.classList.add('copied');
-      btn.textContent = '已复制 ✓';
-      clearTimeout(timer);
-      timer = setTimeout(() => { btn.classList.remove('copied'); btn.textContent = label; }, 1600);
-    });
-  });
-
-  // Scroll: progress bar + hero fade + photo parallax
-  let scrollFrame = 0;
-  const shiftScene = () => {
-    if (scrollFrame) return;
-    scrollFrame = requestAnimationFrame(() => {
-      const doc = document.documentElement;
-      const max = Math.max(1, doc.scrollHeight - doc.clientHeight);
-      progress.style.width = `${(doc.scrollTop / max * 100).toFixed(2)}%`;
-      if (!reduced && finePointer) {
-        const rect = hero.getBoundingClientRect();
-        const p = Math.max(0, Math.min(1, -rect.top / Math.max(1, rect.height)));
-        scene.style.setProperty('--shift-y', `${(p * 34).toFixed(1)}px`);
-        hero.style.setProperty('--hp', p.toFixed(3));
-        const vh = window.innerHeight;
-        document.querySelectorAll('.visual-card img').forEach(img => {
-          const box = img.parentElement.getBoundingClientRect();
-          if (box.bottom > -80 && box.top < vh + 80) {
-            const q = (box.top + box.height / 2 - vh / 2) / vh;
-            img.style.setProperty('--py', `${(q * 30).toFixed(1)}px`);
-          }
-        });
-      }
-      scrollFrame = 0;
-    });
+  /* 数字滚动 */
+  const nums = document.querySelectorAll('[data-count]');
+  const fmt = (el, v) => {
+    const unit = el.querySelector('small').outerHTML;
+    const t = el.dataset.fmt === 'wan' ? (v / 10000).toFixed(1) : Math.round(v).toLocaleString('en-US');
+    el.innerHTML = t + unit;
   };
-  window.addEventListener('scroll', shiftScene, {passive:true});
-  window.addEventListener('resize', shiftScene, {passive:true});
-  shiftScene();
-
-  if (!reduced && finePointer) {
-    hero.addEventListener('pointermove', event => {
-      const box = hero.getBoundingClientRect();
-      const x = (event.clientX - box.left) / box.width - 0.5;
-      const y = (event.clientY - box.top) / box.height - 0.5;
-      scene.style.setProperty('--tilt-y', `${(x * 8).toFixed(2)}deg`);
-      scene.style.setProperty('--tilt-x', `${(-y * 5).toFixed(2)}deg`);
-    }, {passive:true});
-    hero.addEventListener('pointerleave', () => {
-      scene.style.setProperty('--tilt-x', '0deg');
-      scene.style.setProperty('--tilt-y', '0deg');
-    }, {passive:true});
-
-    // Trailing cursor ring
-    let mx = -100, my = -100, rx = -100, ry = -100, raf = 0;
-    window.addEventListener('pointermove', e => {
-      mx = e.clientX; my = e.clientY;
-      ring.classList.add('on');
-      const t = e.target.closest('a,button,summary,.float-card,.scene-row');
-      ring.classList.toggle('hot', !!t);
-    }, {passive:true});
-    document.addEventListener('pointerleave', () => ring.classList.remove('on'));
-    const follow = () => {
-      rx += (mx - rx) * 0.16;
-      ry += (my - ry) * 0.16;
-      ring.style.left = `${rx.toFixed(1)}px`;
-      ring.style.top = `${ry.toFixed(1)}px`;
-      raf = requestAnimationFrame(follow);
-    };
-    follow();
+  if (!reduce && 'IntersectionObserver' in window) {
+    const io2 = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return; io2.unobserve(e.target);
+      const el = e.target, end = +el.dataset.count, t0 = performance.now(), dur = 1300;
+      const step = now => { const k = Math.min(1, (now - t0) / dur); fmt(el, end * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(step); };
+      fmt(el, 0); requestAnimationFrame(step);
+    }), { threshold: .6 });
+    nums.forEach(n => io2.observe(n));
   }
+
+  /* 滚动：进度条、悬浮导航、首屏景深、履历横移 */
+  const bar = document.getElementById('progress');
+  const nav = document.getElementById('floatnav');
+  const stage = document.querySelector('.hero-stage');
+  const copy = document.getElementById('hero-copy');
+  const art = document.getElementById('hero-art');
+  const cv = document.getElementById('cv');
+  const track = document.getElementById('cv-track');
+  const cvBar = cv.querySelector('.cv-bar');
+  const pinMQ = matchMedia('(min-width:1000px) and (min-height:640px)');
+  const depthMQ = matchMedia('(min-width:1000px) and (min-height:700px)');
+  let cvTravel = 0;
+
+  const layoutCV = () => {
+    const on = pinMQ.matches && !reduce;
+    root.classList.toggle('cv-pin', on);
+    if (!on) { cv.style.removeProperty('--cv-h'); track.style.transform = ''; return; }
+    cvTravel = Math.max(0, track.scrollWidth - track.parentElement.clientWidth);
+    cv.style.setProperty('--cv-h', (innerHeight + cvTravel) + 'px');
+  };
+
+  let ticking = false;
+  const onScroll = () => {
+    ticking = false;
+    const y = scrollY, max = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
+    nav.classList.toggle('show', y > innerHeight * .8);
+    if (!reduce && depthMQ.matches) {
+      const travel = stage.offsetHeight - innerHeight;
+      const p = Math.min(1, Math.max(0, y / travel));
+      copy.style.transform = `translateY(${-p * 60}px)`; copy.style.opacity = 1 - p * .75;
+      art.style.transform = `translateY(${-p * 30}px) scale(${1 + p * .08}) rotate(${-p * 2.4}deg)`;
+    } else { copy.style.transform = ''; copy.style.opacity = ''; art.style.transform = ''; }
+    if (root.classList.contains('cv-pin')) {
+      const top = cv.offsetTop, len = cv.offsetHeight - innerHeight;
+      const p = Math.min(1, Math.max(0, (y - top) / len));
+      track.style.transform = `translate3d(${-p * cvTravel}px,0,0)`;
+      cvBar.style.setProperty('--cvp', p.toFixed(4));
+    }
+  };
+  const req = () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } };
+  addEventListener('scroll', req, { passive: true });
+  addEventListener('resize', () => { layoutCV(); req(); });
+  pinMQ.addEventListener && pinMQ.addEventListener('change', () => { layoutCV(); req(); });
+  layoutCV(); onScroll();
+  addEventListener('load', () => { layoutCV(); req(); });
+
+  /* 点击复制 */
+  document.querySelectorAll('[data-copy]').forEach(b => b.addEventListener('click', async () => {
+    const a = b.querySelector('.a'), old = '点击复制';
+    try { await navigator.clipboard.writeText(b.dataset.copy); a.textContent = '已复制 ✓'; }
+    catch (e) { a.textContent = '请手动复制'; }
+    b.classList.add('done');
+    setTimeout(() => { a.textContent = old; b.classList.remove('done'); }, 1800);
+  }));
 })();
 </script>
 </body>
